@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Route, withRouter, Redirect, NavLink } from 'react-router-dom';
 import { AnimatedSwitch } from 'react-router-transition';
 
+import Planets from './containers/planets';
+
 import './App.css';
 
 class App extends Component {
@@ -14,7 +16,7 @@ class App extends Component {
         atActive={{ opacity: 1 }}
         className="switch-wrapper"
       >
-        <Route path='/planets' render={(props) => <div>Planets page</div>} />
+        <Route path='/planets' render={(props) => <Planets {...props}/>} />
         <Route path='/' render={(props) => <div>Main page</div>} />
         <Redirect to='/' />
       </AnimatedSwitch>
