@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
-import { Route, Switch, withRouter, Redirect, NavLink } from 'react-router-dom';
+import { Route, withRouter, Redirect, NavLink } from 'react-router-dom';
+import { AnimatedSwitch } from 'react-router-transition';
+
 import './App.css';
 
 class App extends Component {
+
   render() {
     let routes = (
-      <Switch>
+      <AnimatedSwitch
+        atEnter={{ opacity: 0 }}
+        atLeave={{ opacity: 0 }}
+        atActive={{ opacity: 1 }}
+        className="switch-wrapper"
+      >
         <Route path='/planets' render={(props) => <div>Planets page</div>} />
         <Route path='/' render={(props) => <div>Main page</div>} />
         <Redirect to='/' />
-      </Switch>
+      </AnimatedSwitch>
     );
     return (
       <div>

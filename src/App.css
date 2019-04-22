@@ -1,3 +1,11 @@
 .App {
   text-align: center;
 }
+
+.switch-wrapper {
+  position: relative;
+}
+
+.switch-wrapper > div {
+  position: absolute;
+}
