@@ -25,7 +25,7 @@ class App extends Component {
     );
     return (
       <div>
-        <CustomLayout>
+        <CustomLayout {...this.props}>
           {routes}
         </CustomLayout>
       </div>

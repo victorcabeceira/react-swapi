@@ -42,7 +42,7 @@ const header = props => {
               <Col xs={4}>
                 <Row end="xs" middle="xs" style={{ height: '100%' }}>
 
-                  <NavigationItems />
+                  <NavigationItems {...props} />
 
                 </Row>
               </Col>
