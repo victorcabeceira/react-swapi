@@ -3,3 +3,8 @@ body {
   padding: 0;
   font-family: "Open Sans", sans-serif;
 }
+
+@font-face {
+  font-family: 'Death star font';
+  src: local('Death star font'), url('../src/assets/fonts/Death_Star_Font.otf') format('opentype');
+}
