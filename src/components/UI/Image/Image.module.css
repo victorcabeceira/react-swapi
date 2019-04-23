@@ -1,0 +1,10 @@
+.Image {
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.Image img {
+  padding-top: 4px;
+  height: 56px;
+}
