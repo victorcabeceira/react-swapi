@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Loader from '../Loader/Loader';
+import classes from './LoadingPage.module.css';
 
 const loadingPage = props => {
   console.log('loadingPage', props)
@@ -15,7 +15,10 @@ const loadingPage = props => {
       height: outerHeight,
       backgroundColor: '#222',
     }}>
-      <Loader />
+      <p className={classes.LoadingPageText}>
+        LOADING  THE  ENTIRE  GALAXY. . .
+      </p>
+      <div className={classes.Loader}>Loading...</div>
     </div>
   )
 }
