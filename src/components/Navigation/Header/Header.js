@@ -8,7 +8,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import Logo from '../../../components/Logo/Logo';
 import Image from '../../../components/UI/Image/Image';
-import swImg from '../../../assets/images/sw_logo_yt.png';
+import swImg from '../../../assets/images/sw_logo_g_tm.png';
 import classes from './Header.module.css';
 
 const header = props => {
