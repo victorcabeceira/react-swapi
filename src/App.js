@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { lazy, Suspense, Fragment } from 'react';
 
 import { Route, withRouter, Redirect } from 'react-router-dom';
 import { AnimatedSwitch } from 'react-router-transition';
 
-import Planets from './containers/planets';
-import MainPage from './containers/mainPage/mainPage';
-import CustomLayout from './hoc/Layout/Layout';
+import LoadingPage from '../src/components/UI/LoadingPage/LoadingPage';
 
 import './App.css';
+
+const Planets = lazy(() => {
+  return import('./containers/planets');
+});
+
+const MainPage = lazy(() => {
+  return import('./containers/mainPage/mainPage');
+});
+
+const CustomLayout = lazy(() => {
+  return import('./hoc/Layout/Layout');
+});
+
 
 const app = props => {
   let routes = (
@@ -23,11 +34,13 @@ const app = props => {
     </AnimatedSwitch>
   );
   return (
-    <div>
-      <CustomLayout {...props}>
-        {routes}
-      </CustomLayout>
-    </div>
+    <Fragment>
+      <Suspense fallback={<LoadingPage {...props}/>}>
+        <CustomLayout {...props}>
+          {routes}
+        </CustomLayout>
+      </Suspense>
+    </Fragment>
   );
 }
 

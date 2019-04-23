@@ -4,7 +4,7 @@ import classes from './Loader.module.css';
 
 const loader = () => {
   return (
-    <div class={classes.Loader}>Loading...</div>
+    <div className={classes.Loader}>Loading...</div>
   )
 }
 
