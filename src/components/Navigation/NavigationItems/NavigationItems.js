@@ -18,6 +18,7 @@ const navigationItems = (props) => (
       // className={props.active ? classes.active : null}
       />
     </Col>
+
     <Col xs>
       <NavigationItem
         title='Planets'

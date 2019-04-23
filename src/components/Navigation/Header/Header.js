@@ -1,11 +1,12 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { NavLink } from 'react-router-dom';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 
 import NavigationItems from '../NavigationItems/NavigationItems';
+import Logo from '../../../components/Logo/Logo';
 import classes from './Header.module.css';
 
 const header = props => {
@@ -16,9 +17,13 @@ const header = props => {
           <Grid fluid style={{ width: '100%' }}>
             <Row>
               <Col xs={4}>
-                <Typography variant="h6" color="inherit">
-                  Logo
-                </Typography>
+                <NavLink
+                  to={'/'}
+                  exact
+                  onClick={() => console.log(`logo was clicked`)}
+                >
+                  <Logo />
+                </NavLink>
               </Col>
 
               <Col xs={4}>
