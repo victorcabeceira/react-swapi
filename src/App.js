@@ -32,9 +32,9 @@ const app = props => {
       atActive={{ opacity: 1 }}
       className="switch-wrapper"
     >
-      <Route exact path='/planets' render={(props) => <Planets {...props} />} />
+      <Route exact path='/planets' component={Planets} />
       <Route exact path={`/planets/:id`} component={Planet}/>
-      <Route path='/' render={(props) => <MainPage {...props} />} />
+      <Route path='/' component={MainPage} />
       <Redirect to='/' />
     </AnimatedSwitch>
   );
