@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const mainPage = props => {
   return (
-    <Fragment>
-      Main Page
-    </Fragment>
+    <div style={{ background: 'black', color: 'white' }}>
+      Main Page - Carousel
+    </div>
   )
 }
 

@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Loader from '../../components/UI/Loader/Loader';
+import Page from '../../components/UI/Page/Page';
 import * as actions from '../../store/actions/index';
 
 const planets = props => {
@@ -37,9 +38,9 @@ const planets = props => {
   }
 
   return (
-    <div>
+    <Page>
       {planets}
-    </div>
+    </Page>
   )
 }
 
