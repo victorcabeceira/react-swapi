@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import Loader from '../../components/UI/Loader/Loader';
 import * as actions from '../../store/actions/index';
 
 const planets = props => {
@@ -9,7 +10,7 @@ const planets = props => {
     props.onFetchPlanets(0);
   }, []);
 
-  let planets = <div>No planets loaded.</div>
+  let planets = <div><Loader style={{ background: 'yellow' }}/></div>
 
   if (!props.loading) {
     planets = (

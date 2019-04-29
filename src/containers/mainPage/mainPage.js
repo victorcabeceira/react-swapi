@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const mainPage = props => {
   return (
-    <div>
+    <Fragment>
       Main Page
-    </div>
+    </Fragment>
   )
 }
 

@@ -1,17 +1,22 @@
 import React, { Fragment } from 'react';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import CustomHeader from '../../components/Navigation/Header/Header';
 import CustomFooter from '../../components/Navigation/Footer/Footer';
 
-import classes from './Layout.module.css';
-
 const layout = props => {
   return (
     <Fragment>
-      <CustomHeader {...props}/>
-      <main className={classes.Content}>
-        {props.children}
-      </main>
+      <CustomHeader {...props} />
+
+      <Grid fluid style={{ width: '100%', height: '100%' }}>
+        <Row>
+          <Col xs={12}>
+            {props.children}
+          </Col>
+        </Row>
+      </Grid>
+
       <CustomFooter />
     </Fragment>
   )
