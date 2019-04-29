@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Row, Col } from 'react-flexbox-grid';
+
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
 
 import Loader from '../../components/UI/Loader/Loader';
 import * as actions from '../../store/actions/index';
@@ -29,17 +33,38 @@ const planets = props => {
               const idRegex = /(\b\d*\b)(?!\1)/g;
               const planetUrlId = idRegex.exec(planet.url);
 
+              const wantedProperties = ['name', 'climate', 'gravity', 'terrain', 'population', 'residents', 'films' ];
+
+              const filteredPlanet = Object.entries(planet).filter(p => wantedProperties.includes(p[0]));
+
               return (
-                <Col xs={6}>
-                  <NavLink
+                <Col xs={5} className="m-md" key={planetUrlId[0]}>
+                  <Link
                     to={`/planets/${planetUrlId[0]}`}
-                    exact
                     key={planetUrlId[0]}
+                    style={{ textDecoration: 'none', color: '#E8E8E8' }}
                   >
-                    <div>
-                      Name: {planet.name}
-                    </div>
-                  </NavLink>
+                    <Card style={{ background: '#5A5A5A' }}>
+                      <CardActionArea>
+                        <CardContent >
+                          <div className={classes.CardContentTitle}>
+                            Planet {planet.name}
+                          </div>
+                          {filteredPlanet.map(fp => {
+                            let property = fp[0].charAt(0).toUpperCase() + fp[0].slice(1)
+                            property = property.replace('_', ' ')
+                            let value = Array.isArray(fp[1]) ? fp[1].length : fp[1];
+                            return (
+                              <div key={`${planetUrlId[0]}_${fp[0]}`} className={classes.CardContent}>
+                                <div className={classes.ContentProperty}>{property} : </div>
+                                <div className={classes.ContentData}>{value}</div>
+                              </div>
+                            )
+                          })}
+                        </CardContent>
+                      </CardActionArea>
+                    </Card>
+                  </Link>
                 </Col>
               )
             })}
@@ -51,8 +76,11 @@ const planets = props => {
   }
 
   return (
-    <div>
+    <div style={{ marginBottom: 60 }}>
       {planets}
+      <div style={{ color: 'white' }}>
+        TODO: Pagination
+      </div>
     </div>
   )
 }
