@@ -3,8 +3,6 @@ import React from 'react';
 import classes from './LoadingPage.module.css';
 
 const loadingPage = props => {
-  console.log('loadingPage', props)
-  console.log('window', window)
   const { innerWidth, outerHeight } = window;
   return (
     <div style={{
