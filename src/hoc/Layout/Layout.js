@@ -10,7 +10,7 @@ const layout = props => {
 
         {props.children}
 
-      <CustomFooter />
+      <CustomFooter {...props} />
     </Fragment>
   )
 }
