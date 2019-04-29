@@ -11,3 +11,47 @@
   width: 100%;
   height: 100%;
 }
+
+.m-0 {
+  margin: 0;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mr-0 {
+  margin-right: 0;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.ml-0 {
+  margin-left: 0;
+}
+
+.mt-sm {
+  margin-top: 5px;
+}
+
+.mr-sm {
+  margin-right: 5px;
+}
+
+.mb-sm {
+  margin-bottom: 5px;
+}
+
+.ml-sm {
+  margin-left: 5px;
+}
+
+.mv-sm {
+  margin: 5px 0 5px;
+}
+
+.mh-sm {
+  margin: 0 5px 0;
+}
