@@ -55,3 +55,47 @@
 .mh-sm {
   margin: 0 5px 0;
 }
+
+.p-0 {
+  padding: 0;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.pr-0 {
+  padding-right: 0;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+
+.pt-sm {
+  padding-top: 5px;
+}
+
+.pr-sm {
+  padding-right: 5px;
+}
+
+.pb-sm {
+  padding-bottom: 5px;
+}
+
+.pl-sm {
+  padding-left: 5px;
+}
+
+.pv-sm {
+  padding: 5px 0 5px;
+}
+
+.ph-sm {
+  padding: 0 5px 0;
+}
