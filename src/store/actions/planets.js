@@ -7,12 +7,6 @@ export const fetchPlanets = (page) => {
   }
 }
 
-export const fetchPlanetsInit = () => {
-  return {
-    type: actionTypes.FETCH_PLANETS_INIT
-  }
-}
-
 export const fetchPlanetsStart = () => {
   return {
     type: actionTypes.FETCH_PLANETS_START,
