@@ -37,6 +37,10 @@
   margin-left: 0;
 }
 
+.m-sm {
+  margin: 4px;
+}
+
 .mt-sm {
   margin-top: 4px;
 }
@@ -61,6 +65,10 @@
 .mh-sm {
   margin-right: 4px;
   margin-left: 4px;
+}
+
+.m-md {
+  margin: 8px;
 }
 
 .mt-md {
@@ -113,6 +121,10 @@
   padding-left: 0;
 }
 
+.p-sm {
+  padding: 4px;
+}
+
 .pt-sm {
   padding-top: 4px;
 }
@@ -137,6 +149,10 @@
 .ph-sm {
   padding-right: 4px;
   padding-left: 4px;
+}
+
+.p-sm {
+  padding: 8px;
 }
 
 .pt-md {
