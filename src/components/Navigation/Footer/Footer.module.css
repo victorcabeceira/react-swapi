@@ -1,3 +1,10 @@
 .Footer {
-  margin-top: 12px;
+  padding-bottom: 60px;
+}
+
+.FooterRoot {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }

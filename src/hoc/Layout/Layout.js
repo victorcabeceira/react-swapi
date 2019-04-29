@@ -1,17 +1,17 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import CustomHeader from '../../components/Navigation/Header/Header';
 import CustomFooter from '../../components/Navigation/Footer/Footer';
 
 const layout = props => {
   return (
-    <Fragment>
+    <div style={{ background: '#363636' }}>
       <CustomHeader {...props} />
 
         {props.children}
 
       <CustomFooter {...props} />
-    </Fragment>
+    </div>
   )
 }
 

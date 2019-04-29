@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Loader from '../../components/UI/Loader/Loader';
-import Page from '../../components/UI/Page/Page';
 import * as actions from '../../store/actions/index';
 
 const planets = props => {
@@ -11,7 +10,7 @@ const planets = props => {
     props.onFetchPlanets(0);
   }, []);
 
-  let planets = <div><Loader style={{ background: 'yellow' }}/></div>
+  let planets = <div><Loader style={{ background: '#FFD700' }}/></div>
 
   if (!props.loading) {
     planets = (
@@ -38,9 +37,9 @@ const planets = props => {
   }
 
   return (
-    <Page>
+    <div>
       {planets}
-    </Page>
+    </div>
   )
 }
 

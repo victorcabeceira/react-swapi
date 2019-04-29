@@ -11,7 +11,7 @@ import classes from './Footer.module.css';
 const footer = props => {
   return (
     <div className={classes.Footer}>
-      <AppBar position="static" style={{ background: '#222' }}>
+      <AppBar style={{ background: '#222', top: 'auto' }} className={classes.FooterRoot}>
         <Toolbar>
           <Page>
             <Row center="xs" middle="xs" style={{ minHeight: '120px' }}>

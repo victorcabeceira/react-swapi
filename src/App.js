@@ -8,11 +8,11 @@ import LoadingPage from '../src/components/UI/LoadingPage/LoadingPage';
 import './App.css';
 
 const Planets = lazy(() => {
-  return import('./containers/planets');
+  return import('./containers/planets/Planets');
 });
 
 const Planet = lazy(() => {
-  return import('./containers/planets/planet');
+  return import('./containers/planets/planet/Planet');
 });
 
 const MainPage = lazy(() => {
