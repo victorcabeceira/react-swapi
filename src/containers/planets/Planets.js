@@ -94,7 +94,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onFetchPlanets: (token, userId) => dispatch(actions.fetchPlanets(token, userId))
+    onFetchPlanets: (page) => dispatch(actions.fetchPlanets(page))
   };
 };
 
