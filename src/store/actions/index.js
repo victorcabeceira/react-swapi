@@ -1,7 +1,13 @@
 export {
   fetchPlanets,
-  fetchPlanetsInit,
   fetchPlanetsStart,
   fetchPlanetsSuccess,
   fetchPlanetsFail,
 } from './planets'
+
+export {
+  fetchPlanet,
+  fetchPlanetStart,
+  fetchPlanetSuccess,
+  fetchPlanetFail,
+} from './planet'
