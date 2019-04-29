@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -12,22 +12,23 @@ const navigationItem = (props) => {
   const active = (pathname === to);
 
   return (
-    <Fragment>
+    <div className={classes.NavLink}>
       <Tooltip title={props.title}>
         <NavLink
           to={props.to}
           exact={props.exact}
           onClick={() => console.log(`${props.title} was clicked`)}
+
         >
           <FontAwesomeIcon
             icon={props.icon}
             size={props.size}
             className={classes.NavigationItemFAI}
-            color={active ? '#E8E8E8' : props.color}
+            color={active ? '#FFD700' : props.color}
           />
         </NavLink>
       </Tooltip>
-    </Fragment>
+    </div>
   )
 }
 

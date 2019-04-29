@@ -7,7 +7,7 @@ import NavigationItem from './NavigationItem/NavigationItem';
 // import classes from './NavigationItems.module.css'
 
 const navigationItems = (props) => (
-  <Row end="xs" middle="xs">
+  <Row end="xs" middle="xs" between="xs">
     <Col xs>
       <NavigationItem
         title='Spaceships'
