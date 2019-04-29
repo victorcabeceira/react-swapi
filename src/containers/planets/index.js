@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import * as actions from '../../store/actions/index';
@@ -14,14 +15,24 @@ const planets = props => {
     planets = (
       <div>
         <p>Planets count: {props.planets.count}</p>
-        {props.planets.results.map(planet => (
-          <div key={planet.name}>
-            Name: {planet.name}
-          </div>
-        ))}
+        {props.planets.results.map(planet => {
+          const idRegex = /(\b\d*\b)(?!\1)/g;
+          const planetUrlId = idRegex.exec(planet.url);
+
+          return (
+            <NavLink
+              to={`/planets/${planetUrlId[0]}`}
+              exact
+              key={planetUrlId[0]}
+            >
+              <div>
+                Name: {planet.name}
+              </div>
+            </NavLink>
+          )
+        })}
       </div>
     )
-
   }
 
   return (

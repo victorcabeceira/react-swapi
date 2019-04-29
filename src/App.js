@@ -11,6 +11,10 @@ const Planets = lazy(() => {
   return import('./containers/planets');
 });
 
+const Planet = lazy(() => {
+  return import('./containers/planets/planet');
+});
+
 const MainPage = lazy(() => {
   return import('./containers/mainPage/mainPage');
 });
@@ -28,7 +32,8 @@ const app = props => {
       atActive={{ opacity: 1 }}
       className="switch-wrapper"
     >
-      <Route path='/planets' render={(props) => <Planets {...props} />} />
+      <Route exact path='/planets' render={(props) => <Planets {...props} />} />
+      <Route exact path={`/planets/:id`} component={Planet}/>
       <Route path='/' render={(props) => <MainPage {...props} />} />
       <Redirect to='/' />
     </AnimatedSwitch>
