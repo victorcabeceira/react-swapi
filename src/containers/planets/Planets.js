@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Row, Col } from 'react-flexbox-grid';
 
@@ -59,7 +59,7 @@ const planets = props => {
 
               return (
                 <Col xs={5} className="m-md" key={planetUrlId[0]}>
-                  <Link
+                  <NavLink
                     to={`/planets/${planetUrlId[0]}`}
                     key={planetUrlId[0]}
                     style={{ textDecoration: 'none', color: '#E8E8E8' }}
@@ -93,7 +93,7 @@ const planets = props => {
                         </CardContent>
                       </CardActionArea>
                     </Card>
-                  </Link>
+                  </NavLink>
                 </Col>
               )
             })}
