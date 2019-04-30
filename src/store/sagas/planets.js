@@ -12,7 +12,11 @@ export function* fetchPlanetsSaga(action) {
     const fetchedPlanets = { count: 0, results: [] };
 
     for (const planet in response.data.results) {
-      fetchedPlanets.results.push(response.data.results[planet]);
+      const planetWithRandomImgNumber = {
+        ...response.data.results[planet],
+        randomImgNumber: Math.floor(Math.random() * 9)
+      }
+      fetchedPlanets.results.push(planetWithRandomImgNumber);
     }
     fetchedPlanets.count = response.data.count;
 

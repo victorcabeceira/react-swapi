@@ -49,7 +49,6 @@ const planets = props => {
               const wantedProperties = ['name', 'climate', 'gravity', 'terrain', 'population', 'residents', 'films'];
 
               const filteredPlanet = Object.entries(planet).filter(p => wantedProperties.includes(p[0]));
-              const randomPlanetImg = Math.floor(Math.random() * 9)
 
               return (
                 <Col xs={5} className="m-md" key={planetUrlId[0]}>
@@ -59,7 +58,7 @@ const planets = props => {
                     style={{ textDecoration: 'none', color: '#E8E8E8' }}
                   >
                     <Card style={{
-                      backgroundImage: `url(${planetsImgArray[randomPlanetImg]}), linear-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.8))`,
+                      backgroundImage: `url(${planetsImgArray[planet.randomImgNumber]}), linear-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.8))`,
                       backgroundSize: 'cover',
                     }}>
                       <CardActionArea>
