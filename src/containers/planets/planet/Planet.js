@@ -14,7 +14,9 @@ import classes from './Planet.module.css';
 const planet = props => {
 
   useEffect(() => {
-    props.onFetchPlanet(1);
+    const idRegex = /(\b\d*\b)(?!\1)/g;
+    const planetUrlId = idRegex.exec(props.match.url);
+    props.onFetchPlanet(planetUrlId[0]);
   }, []);
 
   let planet = <div><Loader style={{ background: '#FFD700' }} /></div>
