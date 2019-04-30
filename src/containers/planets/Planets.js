@@ -50,6 +50,13 @@ const planets = props => {
 
               const filteredPlanet = Object.entries(planet).filter(p => wantedProperties.includes(p[0]));
 
+              const randomRgbaGenerator = () => {
+                const g = Math.floor(Math.random() * 80);
+                const b = Math.floor(Math.random() * 80);
+                const r = Math.floor(Math.random() * 80);
+                return 'rgba(' + r + ', ' + g + ', ' + b + ', 1)';
+              }
+
               return (
                 <Col xs={5} className="m-md" key={planetUrlId[0]}>
                   <Link
@@ -58,7 +65,13 @@ const planets = props => {
                     style={{ textDecoration: 'none', color: '#E8E8E8' }}
                   >
                     <Card style={{
-                      backgroundImage: `url(${planetsImgArray[planet.randomImgNumber]}), linear-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.8))`,
+                      backgroundImage: `
+                        url(${planetsImgArray[planet.randomImgNumber]}),
+                        linear-gradient(
+                          ${randomRgbaGenerator()},
+                          rgba(0,0,0,0.3),
+                          rgba(255, 255, 255, 0.8))
+                      `,
                       backgroundSize: 'cover',
                     }}>
                       <CardActionArea>
