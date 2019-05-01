@@ -46,7 +46,7 @@ const planets = props => {
               const idRegex = /(\b\d*\b)(?!\1)/g;
               const planetUrlId = idRegex.exec(planet.url);
 
-              const wantedProperties = ['name', 'climate', 'gravity', 'terrain', 'population', 'residents', 'films'];
+              const wantedProperties = ['name', 'climate', 'gravity', 'population', 'films'];
 
               const filteredPlanet = Object.entries(planet).filter(p => wantedProperties.includes(p[0]));
 

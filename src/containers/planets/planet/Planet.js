@@ -30,7 +30,7 @@ const planet = props => {
     props.onFetchPlanet(planetUrlId[0]);
   }, []);
 
-  const filteredPlanet = Object.entries(props.planet).filter(p => !['randomImgNumber'].includes(p[0]));
+  const filteredPlanet = Object.entries(props.planet).filter(p => !['randomImgNumber', 'url', 'created', 'edited'].includes(p[0]));
   const planetsImgArray = [sun, venus, mercury, earth, moon, mars, jupiter, saturn, neptune, uranus];
 
   let planet = <div><Loader style={{ background: '#FFD700' }} /></div>
@@ -53,7 +53,7 @@ const planet = props => {
               linear-gradient(
                 ${randomRgbaGenerator()},
                 rgba(30, 30, 30, 0.6),
-                rgba(30, 30, 30, 0.4)`,
+                rgba(20, 20, 20, 0.4)`,
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center'
@@ -61,7 +61,7 @@ const planet = props => {
             <CardActionArea>
               <CardContent>
                 <div className={classes.CardContentTitle}>
-                  Planet {planet.name}
+                  Planet {props.planet.name}
                 </div>
 
                 {filteredPlanet.map(fp => {
