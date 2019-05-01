@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
-// import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Row, Col } from 'react-flexbox-grid';
 
 import Card from '@material-ui/core/Card';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 import Loader from '../../../components/UI/Loader/Loader';
+import NextItem from '../../../components/UI/NextItem/NextItem';
 import * as actions from '../../../store/actions/index';
 import classes from './Planet.module.css';
 
@@ -27,7 +25,7 @@ const planet = props => {
     const idRegex = /(\b\d*\b)(?!\1)/g;
     const planetUrlId = idRegex.exec(props.match.url);
     props.onFetchPlanet(planetUrlId[0]);
-  }, []);
+  }, props.match.url);
 
   const filteredPlanet = Object.entries(props.planet).filter(p => !['randomImgNumber', 'url', 'created', 'edited'].includes(p[0]));
   const planetsImgArray = [sun, venus, mercury, earth, moon, mars, jupiter, saturn, neptune, uranus];
@@ -80,10 +78,13 @@ const planet = props => {
   return (
     <Row style={{ margin: 0 }} middle='xs' center='xs'>
       <Col xs={2}>
-        <FontAwesomeIcon
-          icon={faChevronLeft}
+        <NextItem
+          to={`/planets/${parseInt(props.match.params.id, 10) - 1}`}
+          style={{ textDecoration: 'none', color: '#FFFFFF' }}
+          previous
           size='lg'
           color='#FFFFFF'
+          title='Previous planet'
         />
       </Col>
 
@@ -92,10 +93,12 @@ const planet = props => {
       </Col>
 
       <Col xs={2}>
-        <FontAwesomeIcon
-          icon={faChevronRight}
+        <NextItem
+          to={`/planets/${parseInt(props.match.params.id, 10) + 1}`}
+          style={{ textDecoration: 'none', color: '#FFFFFF' }}
           size='lg'
           color='#FFFFFF'
+          title='Next planet'
         />
       </Col>
     </Row>
