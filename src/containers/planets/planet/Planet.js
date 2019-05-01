@@ -23,9 +23,16 @@ import uranus from '../../../assets/images/planets/uranus.png';
 const planet = props => {
   useEffect(() => {
     const idRegex = /(\b\d*\b)(?!\1)/g;
-    const planetUrlId = idRegex.exec(props.match.url);
-    props.onFetchPlanet(planetUrlId[0]);
-  }, props.match.url);
+    const planetUrl = idRegex.exec(props.match.url);
+    const planetUrlId = parseInt(planetUrl[0], 10)
+    const parsedPlanetUrlId = planetUrlId <= 1 ? 1 : (planetUrlId > 61 ? 61 : planetUrlId);
+
+    if (planetUrlId > 61 || planetUrlId < 1) {
+      props.history.push(`/planets/${parsedPlanetUrlId}`);
+    }
+
+    props.onFetchPlanet(parsedPlanetUrlId);
+  }, [props.match.url]);
 
   const filteredPlanet = Object.entries(props.planet).filter(p => !['randomImgNumber', 'url', 'created', 'edited'].includes(p[0]));
   const planetsImgArray = [sun, venus, mercury, earth, moon, mars, jupiter, saturn, neptune, uranus];
@@ -75,11 +82,15 @@ const planet = props => {
     )
   }
 
+  const actualPlanetId = props.match.params.id;
+  const previousPlanetId = actualPlanetId <= 1 ? 1 : parseInt(props.match.params.id, 10) - 1;
+  const nextPlanetId = actualPlanetId >= 61 ? 61 : parseInt(props.match.params.id, 10) + 1;
+
   return (
-    <Row style={{ margin: 0 }} middle='xs' center='xs'>
+    <Row style={{ margin: 0, minHeight: '600px' }} middle='xs' center='xs'>
       <Col xs={2}>
         <NextItem
-          to={`/planets/${parseInt(props.match.params.id, 10) - 1}`}
+          to={`/planets/${previousPlanetId}`}
           style={{ textDecoration: 'none', color: '#FFFFFF' }}
           previous
           size='lg'
@@ -94,7 +105,7 @@ const planet = props => {
 
       <Col xs={2}>
         <NextItem
-          to={`/planets/${parseInt(props.match.params.id, 10) + 1}`}
+          to={`/planets/${nextPlanetId}`}
           style={{ textDecoration: 'none', color: '#FFFFFF' }}
           size='lg'
           color='#FFFFFF'
