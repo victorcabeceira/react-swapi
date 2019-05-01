@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { Row, Col } from 'react-flexbox-grid';
 
 import Card from '@material-ui/core/Card';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 import Loader from '../../../components/UI/Loader/Loader';
 import * as actions from '../../../store/actions/index';
@@ -54,35 +56,49 @@ const planet = props => {
 
   if (!props.loading) {
     planet = (
-      <Row style={{ margin: 0 }} middle='xs' center='xs'>
-        <Col xs={6}>
-          <Card style={cardStyle}  className='pv-md'>
-            <div className={classes.CardContentTitle}>
-              Planet {props.planet.name}
+      <Card style={cardStyle} className='pv-md'>
+        <div className={classes.CardContentTitle}>
+          Planet {props.planet.name}
+        </div>
+
+        {filteredPlanet.map(fp => {
+          let property = fp[0].charAt(0).toUpperCase() + fp[0].slice(1)
+          property = property.replace('_', ' ');
+          let value = Array.isArray(fp[1]) ? fp[1].length : fp[1];
+
+          return (
+            <div key={`${fp.name}_${fp[0]}`} className={classes.CardContent}>
+              <div className={classes.ContentProperty}>{property} : </div>
+              <div className={classes.ContentData}>{value}</div>
             </div>
-
-            {filteredPlanet.map(fp => {
-              let property = fp[0].charAt(0).toUpperCase() + fp[0].slice(1)
-              property = property.replace('_', ' ');
-              let value = Array.isArray(fp[1]) ? fp[1].length : fp[1];
-
-              return (
-                <div key={`${fp.name}_${fp[0]}`} className={classes.CardContent}>
-                  <div className={classes.ContentProperty}>{property} : </div>
-                  <div className={classes.ContentData}>{value}</div>
-                </div>
-              )
-            })}
-          </Card>
-        </Col>
-      </Row>
+          )
+        })}
+      </Card>
     )
   }
 
   return (
-    <div>
-      {planet}
-    </div>
+    <Row style={{ margin: 0 }} middle='xs' center='xs'>
+      <Col xs={2}>
+        <FontAwesomeIcon
+          icon={faChevronLeft}
+          size='lg'
+          color='#FFFFFF'
+        />
+      </Col>
+
+      <Col xs={8}>
+        {planet}
+      </Col>
+
+      <Col xs={2}>
+        <FontAwesomeIcon
+          icon={faChevronRight}
+          size='lg'
+          color='#FFFFFF'
+        />
+      </Col>
+    </Row>
   )
 }
 
