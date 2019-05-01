@@ -49,22 +49,23 @@ const planet = props => {
         rgba(20, 20, 20, 0.4)`,
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center'
+    backgroundPosition: 'center',
   }
 
   if (!props.loading) {
     planet = (
       <Row style={{ margin: 0 }} middle='xs' center='xs'>
-        <Col xs>
-          <Card style={cardStyle}>
+        <Col xs={6}>
+          <Card style={cardStyle}  className='pv-md'>
             <div className={classes.CardContentTitle}>
               Planet {props.planet.name}
             </div>
 
             {filteredPlanet.map(fp => {
               let property = fp[0].charAt(0).toUpperCase() + fp[0].slice(1)
-              property = property.replace('_', ' ')
+              property = property.replace('_', ' ');
               let value = Array.isArray(fp[1]) ? fp[1].length : fp[1];
+
               return (
                 <div key={`${fp.name}_${fp[0]}`} className={classes.CardContent}>
                   <div className={classes.ContentProperty}>{property} : </div>
