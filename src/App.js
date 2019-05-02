@@ -5,6 +5,9 @@ import { AnimatedSwitch } from 'react-router-transition';
 
 import LoadingPage from '../src/components/UI/LoadingPage/LoadingPage';
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+
 import './App.css';
 
 const Planets = lazy(() => {
@@ -23,6 +26,7 @@ const CustomLayout = lazy(() => {
   return import('./hoc/Layout/Layout');
 });
 
+library.add(fab)
 
 const app = props => {
   let routes = (
