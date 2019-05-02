@@ -40,13 +40,13 @@ const planets = props => {
     planets = (
       <Row style={{ margin: 0 }} middle='xs' center='xs'>
         <Col xs>
-          <Row middle='xs' center='xs' className='mv-md'>
+          <Row middle='xs' center='xs' className='mt-xl'>
             <Col xs>
               <div className={classes.Planets}>Planets count : {props.planets.count}</div>
             </Col>
           </Row>
 
-          <Row middle='xs' center='xs' className='mv-md'>
+          <Row middle='xs' center='xs' className='mt-sm'>
             {props.planets.results.map(planet => {
               const planetUrlId = getIdFromUrl(planet.url);
 
@@ -108,10 +108,10 @@ const planets = props => {
     )
 
     pagination = (
-      <div className={`${classes.PaginationLoading} pb-md`}>
+      <div className={`${classes.PaginationLoading} pt-md pb-xl`}>
         <Pagination
           count={props.planets.count}
-          buttonStyle={{ color: '#FFFFFF', margin: '0px 4px 0px' }}
+          page={props.planets.page}
           onClick={(page) => props.onPlanetsPageChange(page)}
         />
       </div>
