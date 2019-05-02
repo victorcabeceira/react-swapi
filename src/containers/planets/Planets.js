@@ -59,7 +59,7 @@ const planets = props => {
               }
 
               return (
-                <Col xs={5} className="m-md" key={planetUrlId[0]}>
+                <Col xs={5} className="m-md" key={planetUrlId}>
                   <NavLink
                     to={`/planets/${planetUrlId[0]}`}
                     key={planetUrlId[0]}

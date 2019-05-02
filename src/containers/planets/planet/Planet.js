@@ -38,7 +38,6 @@ const planet = props => {
   }, [props.match.url]);
 
   const filteredPlanet = Object.entries(props.planet).filter(p => !['randomImgNumber', 'url', 'created', 'edited'].includes(p[0]));
-  console.log('filteredPlanet', filteredPlanet);
   const planetsImgArray = [sun, venus, mercury, earth, moon, mars, jupiter, saturn, neptune, uranus];
 
   let planet = <div><Loader style={{ background: '#FFD700' }} /></div>
