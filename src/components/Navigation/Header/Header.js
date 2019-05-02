@@ -19,13 +19,17 @@ const header = props => {
           <Grid fluid style={{ width: '100%' }}>
             <Row>
               <Col xs={4}>
-                <NavLink
-                  to={'/'}
-                  exact
-                  onClick={() => console.log(`logo was clicked`)}
-                >
-                  <Logo />
-                </NavLink>
+                <Row middle='xs' left='xs'>
+                  <Col xs={2}>
+                    <NavLink
+                      to={'/'}
+                      exact
+                      onClick={() => console.log(`logo was clicked`)}
+                    >
+                      <Logo />
+                    </NavLink>
+                  </Col>
+                </Row>
               </Col>
 
               <Col xs={4}>
