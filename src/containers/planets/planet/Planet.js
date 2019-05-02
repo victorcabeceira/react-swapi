@@ -84,11 +84,11 @@ const planet = props => {
 
           return (
             <div key={`${fp.name}_${fp[0]}`} className={classes.CardContent}>
-              <div className={classes.ContentProperty}>{property} : {hasUrls ? `${filteredUrls.length}` : null }</div>
+              <div className={classes.ContentProperty}>{property} : {hasUrls ? `${filteredUrls.length}` : null}</div>
               {hasUrls ?
                 filteredUrls.map((fu, i) => {
                   return (
-                    <div key={i} className={`${classes.ContentData} mh-sm`} style={{ verticalAlign: 'baseline'}}>
+                    <div key={i} className={`${classes.ContentData} mh-sm`} style={{ verticalAlign: 'baseline' }}>
                       <CustomNavLink
                         customTo={fu}
                         customKey={i}
@@ -116,12 +116,14 @@ const planet = props => {
     <Row style={{ margin: 0, minHeight: '600px' }} middle='xs' center='xs'>
       <Col xs={2}>
         <NextItem
-          to={`/planets/${previousPlanetId}`}
+          to={`/planets/${previousPlanetId}/`}
           style={{ textDecoration: 'none', color: '#FFFFFF' }}
           previous
           size='lg'
           color='#FFFFFF'
           title='Previous planet'
+          minId={1}
+          actualId={parseInt(actualPlanetId)}
         />
       </Col>
 
@@ -131,11 +133,13 @@ const planet = props => {
 
       <Col xs={2}>
         <NextItem
-          to={`/planets/${nextPlanetId}`}
+          to={`/planets/${nextPlanetId}/`}
           style={{ textDecoration: 'none', color: '#FFFFFF' }}
           size='lg'
           color='#FFFFFF'
           title='Next planet'
+          maxId={61}
+          actualId={parseInt(actualPlanetId)}
         />
       </Col>
     </Row>
