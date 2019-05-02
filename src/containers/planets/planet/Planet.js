@@ -87,17 +87,16 @@ const planet = props => {
 
           return (
             <div key={`${fp.name}_${fp[0]}`} className={classes.CardContent}>
-              <div className={classes.ContentProperty}>{property} : </div>
+              <div className={classes.ContentProperty}>{property} : {hasUrls ? `${filteredUrls.length}` : null }</div>
               {hasUrls ?
                 filteredUrls.map((fu, i) => {
-                  const isLastOfArray = i + 1 === filteredUrls.length ? '' : ' - ';
-                  const divContent = ` ${getIdFromUrl(fu)}${isLastOfArray}`;
                   return (
-                    <div key={i} className={classes.ContentData}>
+                    <div key={i} className={`${classes.ContentData} mh-sm`} style={{ verticalAlign: 'baseline'}}>
                       <CustomNavLink
                         customTo={fu}
                         customKey={i}
-                        divContent={divContent}
+                        divContent={getIdFromUrl(fu)}
+                        style={{ backgroundColor: '#222222', borderRadius: '20px', minWidth: '0px' }}
                       />
                     </div>
                   )
