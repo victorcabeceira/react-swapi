@@ -4,6 +4,8 @@ import { Row, Col } from 'react-flexbox-grid';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import Page from '../../UI/Page/Page';
 
 import classes from './Footer.module.css';
@@ -19,7 +21,7 @@ const footer = props => {
               <Col xs={4} style={{ height: '100%' }}>
                 <Row center="xs" middle="xs">
                   <Col xs>
-                    Section 1
+                    <FontAwesomeIcon icon={['fab', 'github-alt']} size='2x' color='#FFFFFF'/>
                   </Col>
                 </Row>
 
@@ -42,7 +44,7 @@ const footer = props => {
               </Col>
 
               <Col xs={4}>
-              <Row center="xs" middle="xs">
+                <Row center="xs" middle="xs">
                   <Col xs>
                     Section 4
                   </Col>
