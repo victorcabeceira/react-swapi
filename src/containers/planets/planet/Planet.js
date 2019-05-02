@@ -6,8 +6,11 @@ import Card from '@material-ui/core/Card';
 
 import Loader from '../../../components/UI/Loader/Loader';
 import NextItem from '../../../components/UI/NextItem/NextItem';
+import CustomNavLink from '../../../components/Navigation/CustomNavLink/CustomNavLink';
 import * as actions from '../../../store/actions/index';
 import classes from './Planet.module.css';
+
+import { getIdFromUrl, filterUrl } from '../../../shared/utility';
 
 import sun from '../../../assets/images/planets/sun.png';
 import venus from '../../../assets/images/planets/venus.png';
@@ -35,6 +38,7 @@ const planet = props => {
   }, [props.match.url]);
 
   const filteredPlanet = Object.entries(props.planet).filter(p => !['randomImgNumber', 'url', 'created', 'edited'].includes(p[0]));
+  console.log('filteredPlanet', filteredPlanet);
   const planetsImgArray = [sun, venus, mercury, earth, moon, mars, jupiter, saturn, neptune, uranus];
 
   let planet = <div><Loader style={{ background: '#FFD700' }} /></div>
@@ -69,12 +73,38 @@ const planet = props => {
         {filteredPlanet.map(fp => {
           let property = fp[0].charAt(0).toUpperCase() + fp[0].slice(1)
           property = property.replace('_', ' ');
-          let value = Array.isArray(fp[1]) ? fp[1].length : fp[1];
+          let value = fp[1];
+          let hasUrls = false;
+          const filteredUrls = [];
+
+          if (Array.isArray(fp[1])) {
+            hasUrls = true;
+            fp[1].forEach(url => {
+              const filteredUrl = filterUrl(url);
+              filteredUrls.push(filteredUrl)
+            })
+          }
 
           return (
             <div key={`${fp.name}_${fp[0]}`} className={classes.CardContent}>
               <div className={classes.ContentProperty}>{property} : </div>
-              <div className={classes.ContentData}>{value}</div>
+              {hasUrls ?
+                filteredUrls.map((fu, i) => {
+                  const isLastOfArray = i + 1 === filteredUrls.length ? '' : ' - ';
+                  const divContent = ` ${getIdFromUrl(fu)}${isLastOfArray}`;
+                  return (
+                    <div key={i} className={classes.ContentData}>
+                      <CustomNavLink
+                        customTo={fu}
+                        customKey={i}
+                        divContent={divContent}
+                      />
+                    </div>
+                  )
+                })
+                :
+                <div className={classes.ContentData}>{value}</div>
+              }
             </div>
           )
         })}
