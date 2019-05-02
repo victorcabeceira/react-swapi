@@ -11,6 +11,8 @@ import Loader from '../../components/UI/Loader/Loader';
 import * as actions from '../../store/actions/index';
 import classes from './Planets.module.css';
 
+import { getIdFromUrl } from '../../shared/utility';
+
 import sun from '../../assets/images/planets/sun.png';
 import venus from '../../assets/images/planets/venus.png';
 import mercury from '../../assets/images/planets/mercury.png';
@@ -43,8 +45,7 @@ const planets = props => {
 
           <Row middle='xs' center='xs' className='mv-md'>
             {props.planets.results.map(planet => {
-              const idRegex = /(\b\d*\b)(?!\1)/g;
-              const planetUrlId = idRegex.exec(planet.url);
+              const planetUrlId = getIdFromUrl(planet.url);
 
               const wantedProperties = ['name', 'climate', 'gravity', 'population', 'films'];
 
