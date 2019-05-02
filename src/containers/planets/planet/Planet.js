@@ -25,9 +25,7 @@ import uranus from '../../../assets/images/planets/uranus.png';
 
 const planet = props => {
   useEffect(() => {
-    const idRegex = /(\b\d*\b)(?!\1)/g;
-    const planetUrl = idRegex.exec(props.match.url);
-    const planetUrlId = parseInt(planetUrl[0], 10)
+    const planetUrlId = getIdFromUrl(props.match.url)
     const parsedPlanetUrlId = planetUrlId <= 1 ? 1 : (planetUrlId > 61 ? 61 : planetUrlId);
 
     if (planetUrlId > 61 || planetUrlId < 1) {
