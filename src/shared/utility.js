@@ -18,3 +18,9 @@ export const filterUrl = (fullUrl) => {
   const urlId = (idRegex.exec(fullUrl))[0];
   return `/${urlCollection}/${urlId}/`
 }
+
+export const getCollectionFromUrl = (fullUrl) => {
+  const apiCollectionRegex = /([a-z]+)(?=\/\d*\/)/g;
+  const urlCollection = (apiCollectionRegex.exec(fullUrl))[0];
+  return `${urlCollection}`
+}
