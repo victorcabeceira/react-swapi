@@ -9,16 +9,18 @@ export function* fetchPlanetsSaga(action) {
 
   try {
     const response = yield axios.get('/planets/' + queryParams);
-    const fetchedPlanets = { count: 0, results: [] };
+    const fetchedPlanets = { count: 0, results: [], next: '', page: 1 };
 
     for (const planet in response.data.results) {
       const planetWithRandomImgNumber = {
         ...response.data.results[planet],
-        randomImgNumber: Math.floor(Math.random() * 9)
+        randomImgNumber: Math.floor(Math.random() * 9),
       }
       fetchedPlanets.results.push(planetWithRandomImgNumber);
     }
     fetchedPlanets.count = response.data.count;
+    fetchedPlanets.next = response.data.next;
+    fetchedPlanets.page = action.page;
 
     yield put(actions.fetchPlanetsSuccess(fetchedPlanets));
   } catch (error) {

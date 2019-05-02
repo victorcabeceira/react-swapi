@@ -2,7 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from '../../shared/utility';
 
 const initialState = {
-  planets: { count: 0, results: [] },
+  planets: { count: 0, results: [], next: '', page: 1 },
   loading: false,
 };
 
