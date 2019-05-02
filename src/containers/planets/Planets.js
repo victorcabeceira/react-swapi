@@ -64,8 +64,8 @@ const planets = props => {
               return (
                 <Col xs={5} className="m-md" key={planetUrlId}>
                   <NavLink
-                    to={`/planets/${planetUrlId[0]}`}
-                    key={planetUrlId[0]}
+                    to={`/planets/${planetUrlId}`}
+                    key={planetUrlId}
                     style={{ textDecoration: 'none', color: '#E8E8E8' }}
                   >
                     <Card style={{
