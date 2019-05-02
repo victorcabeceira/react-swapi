@@ -8,6 +8,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 
 import Loader from '../../components/UI/Loader/Loader';
+import Pagination from '../../components/Navigation/Pagination/Pagination';
 import * as actions from '../../store/actions/index';
 import classes from './Planets.module.css';
 
@@ -26,12 +27,14 @@ import uranus from '../../assets/images/planets/uranus.png';
 
 const planets = props => {
   useEffect(() => {
-    props.onFetchPlanets(0);
-  }, []);
+    props.onFetchPlanets(props.planets.page);
+    console.log('props.planets.page', props.planets.page)
+  }, [props.planets.page]);
 
   const planetsImgArray = [sun, venus, mercury, earth, moon, mars, jupiter, saturn, neptune, uranus];
 
   let planets = <div><Loader style={{ background: '#FFD700' }} /></div>
+  let pagination = <div className={classes.PaginationLoading}>Wait while the planets are loaded. . .</div>
 
   if (!props.loading) {
     planets = (
@@ -103,14 +106,22 @@ const planets = props => {
         </Col>
       </Row>
     )
+
+    pagination = (
+      <div className={`${classes.PaginationLoading} pb-md`}>
+        <Pagination
+          count={props.planets.count}
+          buttonStyle={{ color: '#FFFFFF', margin: '0px 4px 0px' }}
+          onClick={(page) => props.onPlanetsPageChange(page)}
+        />
+      </div>
+    )
   }
 
   return (
     <div style={{ marginBottom: 60 }}>
       {planets}
-      <div style={{ color: 'white' }}>
-        TODO: Pagination
-      </div>
+      {pagination}
     </div>
   )
 }
@@ -124,7 +135,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onFetchPlanets: (page) => dispatch(actions.fetchPlanets(page))
+    onFetchPlanets: (page) => dispatch(actions.fetchPlanets(page)),
+    onPlanetsPageChange: (page) => dispatch(actions.fetchPlanets(page))
   };
 };
 

@@ -1,11 +1,11 @@
-.Planets {
+.Planets, .PaginationLoading {
   font-family: 'Death star font';
   font-size: 200%;
   color: #E8E8E8;
   text-align: center;
 }
 
-.CardContentTitle {
+.CardContentTitle{
   justify-content: center;
   padding: 4px;
   color: #FFD700;
