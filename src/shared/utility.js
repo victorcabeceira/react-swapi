@@ -5,6 +5,12 @@ export const updateObject = (oldObject, updatedProperties) => {
   }
 };
 
+export const getIdFromUrl = (fullUrl) => {
+  const idRegex = /(\b\d*\b)(?!\1)/g;
+  const urlId = idRegex.exec(fullUrl);
+  return urlId[0];
+}
+
 export const filterUrl = (fullUrl) => {
   const apiCollectionRegex = /([a-z]+)(?=\/\d*\/)/g;
   const idRegex = /(\b\d*\b)(?!\1)/g;
