@@ -10,11 +10,11 @@ const navigationItems = (props) => (
   <Row end="xs" middle="xs" between="xs">
     <Col xs>
       <NavigationItem
-        title='Spaceships'
+        title='Starships'
         icon={faSpaceShuttle}
         size='lg'
         color='#8C8C8C'
-        to={'/spaceships'}
+        to={'/starships'}
         {...props}
       // className={props.active ? classes.active : null}
       />
