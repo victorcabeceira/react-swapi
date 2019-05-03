@@ -46,6 +46,17 @@ const starships = props => {
               const wantedProperties = ['name', 'model', 'passengers', 'starship_class', 'crew'];
               const filteredStarship = filterCollection(starship, wantedProperties, true);
               const starshipUrlId = getIdFromUrl(starship.url);
+              const cardStyle = {
+                backgroundImage: `
+                  url(${starshipsImgArray[starship.randomImgNumber]}),
+                  linear-gradient(
+                    ${randomRgbaGenerator(80)},
+                    rgba(0,0,0,0.35),
+                    rgba(30, 30, 30, 0.35))`,
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                backgroundSize: 'contain'
+              }
 
               return (
                 <Col xs={5} className="m-md" key={starshipUrlId}>
@@ -54,40 +65,29 @@ const starships = props => {
                     key={starshipUrlId}
                     style={{ textDecoration: 'none', color: '#E8E8E8' }}
                   >
-                    <Card style={{
-                      backgroundImage: `
-                        url(${starshipsImgArray[starship.randomImgNumber]}),
-                        linear-gradient(
-                          ${randomRgbaGenerator(80)},
-                          rgba(0,0,0,0.35),
-                          rgba(30, 30, 30, 0.35))
-                      `,
-                      backgroundRepeat: 'no-repeat',
-                      backgroundPosition: 'center',
-                      backgroundSize: 'contain',
-                    }}>
+                    <Card style={cardStyle}>
                       <CardActionArea>
-                        <CardContent>
-                          <div className={classes.CardContentTitle}>
-                            Starship {starship.name}
-                          </div>
-                          {filteredStarship.map(fp => {
-                            let property = apiPropertyParser(fp[0]);
-                            let value = apiValueParser(fp[1]);
-                            return (
-                              <div key={`${starshipUrlId[0]}_${fp[0]}`} className={classes.CardContent}>
-                                <div className={classes.ContentProperty}>{property} : </div>
-                                <div className={classes.ContentData}>{value}</div>
-                              </div>
-                            )
-                          })}
-                        </CardContent>
-                      </CardActionArea>
+                      <CardContent>
+                        <div className={classes.CardContentTitle}>
+                          Starship {starship.name}
+                        </div>
+                        {filteredStarship.map(fp => {
+                          let property = apiPropertyParser(fp[0]);
+                          let value = apiValueParser(fp[1]);
+                          return (
+                            <div key={`${starshipUrlId[0]}_${fp[0]}`} className={classes.CardContent}>
+                              <div className={classes.ContentProperty}>{property} : </div>
+                              <div className={classes.ContentData}>{value}</div>
+                            </div>
+                          )
+                        })}
+                      </CardContent>
+                    </CardActionArea>
                     </Card>
                   </NavLink>
                 </Col>
-              )
-            })}
+          )
+        })}
           </Row>
 
         </Col>
