@@ -1,4 +1,6 @@
-.CardContentTitle{
+/* ----------------MULTIPLE--------------- */
+
+.CardContentTitle {
   color: #FFD700;
   font-size: 180%;
   padding: 8px 0px 4px;
@@ -27,6 +29,43 @@
 }
 
 .ContentValue {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 140%;
+}
+
+/* ----------------SINGLE--------------- */
+
+.SingleCardContent {
+  color: #E8E8E8;
+  font-family: 'Death star font';
+  font-size: 140%;
+  justify-content: center;
+  padding: 4px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  vertical-align: middle;
+}
+
+.SingleCardTitle {
+  color: #FFD700;
+  font-size: 220%;
+  padding: 8px 0px 4px;
+}
+
+.SingleContentFilteredCollection {
+  font-size: 120%;
+  margin: 8px;
+}
+
+
+.SingleContentProperty {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: lighter;
+  margin-right: 2px;
+}
+
+.SingleContentData {
   display: inline-block;
   vertical-align: middle;
   font-size: 140%;
