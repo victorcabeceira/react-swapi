@@ -15,7 +15,7 @@ const card = props => {
       linear-gradient(
         ${randomRgbaGenerator(80)},
         rgba(0,0,0,0.35),
-        rgba(30, 30, 30, 0.35))`,
+        rgba(255, 255, 255, 0.7))`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     backgroundSize: 'contain'

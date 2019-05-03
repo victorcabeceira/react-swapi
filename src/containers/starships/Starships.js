@@ -7,11 +7,11 @@ import Loader from '../../components/UI/Loader/Loader';
 import Pagination from '../../components/Navigation/Pagination/Pagination';
 import CustomCard from '../../components/UI/CustomCard/CustomCard';
 
+import { getIdFromUrl, filterCollection } from '../../shared/utility';
+
 import * as actions from '../../store/actions/index';
 
 import classes from './Starships.module.css';
-
-import { getIdFromUrl, filterCollection } from '../../shared/utility';
 
 import starship1 from '../../assets/images/starships/1.png';
 import starship2 from '../../assets/images/starships/2.png';
