@@ -3,13 +3,12 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Row, Col } from 'react-flexbox-grid';
 
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-
 import Loader from '../../components/UI/Loader/Loader';
 import Pagination from '../../components/Navigation/Pagination/Pagination';
+import CustomCard from '../../components/UI/CustomCard/CustomCard';
+
 import * as actions from '../../store/actions/index';
+
 import classes from './Starships.module.css';
 
 import { getIdFromUrl, filterCollection, randomRgbaGenerator, apiPropertyParser, apiValueParser } from '../../shared/utility';
@@ -65,31 +64,26 @@ const starships = props => {
                     key={starshipUrlId}
                     style={{ textDecoration: 'none', color: '#E8E8E8' }}
                   >
-                    <Card style={cardStyle}>
-                      <CardActionArea>
-                      <CardContent>
-                        <div className={classes.CardContentTitle}>
-                          Starship {starship.name}
-                        </div>
-                        {filteredStarship.map(fp => {
-                          let property = apiPropertyParser(fp[0]);
-                          let value = apiValueParser(fp[1]);
-                          return (
-                            <div key={`${starshipUrlId[0]}_${fp[0]}`} className={classes.CardContent}>
-                              <div className={classes.ContentProperty}>{property} : </div>
-                              <div className={classes.ContentData}>{value}</div>
-                            </div>
-                          )
-                        })}
-                      </CardContent>
-                    </CardActionArea>
-                    </Card>
+                    <CustomCard cardStyle={cardStyle}>
+                      <div className={classes.CardContentTitle}>
+                        Starship {starship.name}
+                      </div>
+                      {filteredStarship.map(fp => {
+                        let property = apiPropertyParser(fp[0]);
+                        let value = apiValueParser(fp[1]);
+                        return (
+                          <div key={`${starshipUrlId[0]}_${fp[0]}`} className={classes.CardContent}>
+                            <div className={classes.ContentProperty}>{property} : </div>
+                            <div className={classes.ContentData}>{value}</div>
+                          </div>
+                        )
+                      })}
+                    </CustomCard>
                   </NavLink>
                 </Col>
-          )
-        })}
+              )
+            })}
           </Row>
-
         </Col>
       </Row>
     )
