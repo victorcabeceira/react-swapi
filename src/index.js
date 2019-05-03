@@ -8,8 +8,13 @@ import createSagaMiddleware from 'redux-saga';
 
 import planetsReducer from './store/reducers/planets';
 import planetReducer from './store/reducers/planet';
+import starshipsReducer from './store/reducers/starships';
 
-import { watchPlanets, watchPlanet } from './store/sagas';
+import {
+  watchPlanets,
+  watchPlanet,
+  watchStarships
+} from './store/sagas';
 
 import './index.css';
 import App from './App';
@@ -20,6 +25,7 @@ const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX
 const rootReducer = combineReducers({
   planets: planetsReducer,
   planet: planetReducer,
+  starships: starshipsReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();
@@ -30,6 +36,7 @@ const store = createStore(rootReducer, composeEnhancers(
 
 sagaMiddleware.run(watchPlanets);
 sagaMiddleware.run(watchPlanet);
+sagaMiddleware.run(watchStarships);
 
 const app = (
   <Provider store={store}>
