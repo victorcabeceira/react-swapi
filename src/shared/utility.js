@@ -36,3 +36,12 @@ export const randomRgbaGenerator = (valueToMultiply) => {
   const r = Math.floor(Math.random() * valueToMultiply);
   return 'rgba(' + r + ', ' + g + ', ' + b + ', 1)';
 }
+
+export const apiPropertyParser = (property) => {
+  let propertyParsed = (property.charAt(0).toUpperCase() + property.slice(1)).replace('_', ' ');
+  return propertyParsed;
+}
+
+export const apiValueParser = (value) => {
+  return Array.isArray(value) ? value.length : value;
+}

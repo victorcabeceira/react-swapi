@@ -12,7 +12,7 @@ import Loader from '../../components/UI/Loader/Loader';
 import * as actions from '../../store/actions/index';
 import classes from './Starships.module.css';
 
-import { getIdFromUrl, filterCollection, randomRgbaGenerator } from '../../shared/utility';
+import { getIdFromUrl, filterCollection, randomRgbaGenerator, apiPropertyParser, apiValueParser } from '../../shared/utility';
 
 import sun from '../../assets/images/planets/sun.png';
 import venus from '../../assets/images/planets/venus.png';
@@ -46,7 +46,7 @@ const starships = props => {
           </Row>
 
           <Row middle='xs' center='xs' className='mt-sm'>
-          {props.starships.results.map(starship => {
+            {props.starships.results.map(starship => {
               const wantedProperties = ['name', 'model', 'passengers', 'starship_class', 'crew'];
               const filteredStarship = filterCollection(starship, wantedProperties, true);
               const starshipUrlId = getIdFromUrl(starship.url);
@@ -74,9 +74,8 @@ const starships = props => {
                             Starship {starship.name}
                           </div>
                           {filteredStarship.map(fp => {
-                            let property = fp[0].charAt(0).toUpperCase() + fp[0].slice(1)
-                            property = property.replace('_', ' ')
-                            let value = Array.isArray(fp[1]) ? fp[1].length : fp[1];
+                            let property = apiPropertyParser(fp[0]);
+                            let value = apiValueParser(fp[1]);
                             return (
                               <div key={`${starshipUrlId[0]}_${fp[0]}`} className={classes.CardContent}>
                                 <div className={classes.ContentProperty}>{property} : </div>
