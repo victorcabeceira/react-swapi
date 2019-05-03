@@ -8,7 +8,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 
 import Loader from '../../components/UI/Loader/Loader';
-// import Pagination from '../../components/Navigation/Pagination/Pagination';
+import Pagination from '../../components/Navigation/Pagination/Pagination';
 import * as actions from '../../store/actions/index';
 import classes from './Starships.module.css';
 
@@ -41,7 +41,7 @@ const starships = props => {
         <Col xs>
           <Row middle='xs' center='xs' className='mt-xl'>
             <Col xs>
-              <div className={classes.Starships}>Starships count : TODO</div>
+              <div className={classes.Starships}>Starships count : {props.starships.count}</div>
             </Col>
           </Row>
 
@@ -98,14 +98,11 @@ const starships = props => {
 
     pagination = (
       <div className={`${classes.PaginationLoading} pt-md pb-xl`}>
-        TODO
-        {/*
-          TODO
         <Pagination
           count={props.starships.count}
           page={props.starships.page}
           onClick={(page) => props.onStarshipsPageChange(page)}
-        /> */}
+        />
       </div>
     )
   }
