@@ -11,7 +11,7 @@ import * as actions from '../../store/actions/index';
 
 import classes from './Starships.module.css';
 
-import { getIdFromUrl, filterCollection, randomRgbaGenerator, apiPropertyParser, apiValueParser } from '../../shared/utility';
+import { getIdFromUrl, filterCollection, randomRgbaGenerator } from '../../shared/utility';
 
 import starship1 from '../../assets/images/starships/1.png';
 import starship2 from '../../assets/images/starships/2.png';
@@ -64,21 +64,13 @@ const starships = props => {
                     key={starshipUrlId}
                     style={{ textDecoration: 'none', color: '#E8E8E8' }}
                   >
-                    <CustomCard cardStyle={cardStyle}>
-                      <div className={classes.CardContentTitle}>
-                        Starship {starship.name}
-                      </div>
-                      {filteredStarship.map(fp => {
-                        let property = apiPropertyParser(fp[0]);
-                        let value = apiValueParser(fp[1]);
-                        return (
-                          <div key={`${starshipUrlId[0]}_${fp[0]}`} className={classes.CardContent}>
-                            <div className={classes.ContentProperty}>{property} : </div>
-                            <div className={classes.ContentData}>{value}</div>
-                          </div>
-                        )
-                      })}
-                    </CustomCard>
+                    <CustomCard
+                      collection='Starship'
+                      title={starship.name}
+                      objectId={starshipUrlId}
+                      filteredCollection={filteredStarship}
+                      cardStyle={cardStyle}
+                    />
                   </NavLink>
                 </Col>
               )
