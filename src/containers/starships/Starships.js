@@ -9,15 +9,15 @@ import { Row, Col } from 'react-flexbox-grid';
 
 import Loader from '../../components/UI/Loader/Loader';
 // import Pagination from '../../components/Navigation/Pagination/Pagination';
-// import * as actions from '../../store/actions/index';
+import * as actions from '../../store/actions/index';
 import classes from './Starships.module.css';
 
 // import { getIdFromUrl } from '../../shared/utility';
 
 const starships = props => {
   useEffect(() => {
-    console.log('starships')
-  }, []);
+    props.onFetchStarships(props.starships.page);
+  }, [props.starships.page]);
 
   let starships = <div><Loader style={{ background: '#FFD700' }} /></div>
   let pagination = <div className={classes.PaginationLoading}>Wait while the starships are loaded. . .</div>
@@ -65,15 +65,15 @@ const starships = props => {
 
 const mapStateToProps = state => {
   return {
-    // starships: state.starships.starships,
-    // loading: state.starships.loading,
+    starships: state.starships.starships,
+    loading: state.starships.loading,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    /* onFetchStarships: (page) => dispatch(actions.fetchStarships(page)),
-    onStarshipsPageChange: (page) => dispatch(actions.fetchStarships(page)) */
+    onFetchStarships: (page) => dispatch(actions.fetchStarships(page)),
+    onStarshipsPageChange: (page) => dispatch(actions.fetchStarships(page))
   };
 };
 
