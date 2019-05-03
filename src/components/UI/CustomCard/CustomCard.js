@@ -21,6 +21,7 @@ const card = props => {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     backgroundSize: 'contain',
+    maxHeight: '1024px'
   }
 
   let card = props.children;
@@ -46,11 +47,11 @@ const card = props => {
       </CardActionArea>
     )
   } else if (props.singleData) {
-    cardStyle = {...cardStyle, ...{margin: '40px 0px 40px'}};
+    cardStyle = { ...cardStyle, ...{ margin: '10px 0px 40px' } };
     card = (
       <div className={classes.SingleCardContent}>
         <div className={classes.SingleCardTitle}>
-          Planet {props.title}
+          {props.collection} {props.title}
         </div>
 
         {props.filteredCollection.map(fp => {
