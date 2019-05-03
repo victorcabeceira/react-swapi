@@ -1,25 +1,21 @@
-.Starships, .PaginationLoading {
-  font-family: 'Death star font';
-  font-size: 200%;
-  color: #E8E8E8;
-  text-align: center;
-}
-
 .CardContentTitle{
-  justify-content: center;
-  padding: 4px;
   color: #FFD700;
-  font-size: 200%;
-  font-family: 'Death star font';
+  font-size: 180%;
+  padding: 8px 0px 4px;
 }
 
 .CardContent {
-  justify-content: center;
-  vertical-align: middle;
-  padding: 4px;
-  font-size: 140%;
   color: #E8E8E8;
   font-family: 'Death star font';
+  font-size: 120%;
+  justify-content: center;
+  padding: 16px;
+  vertical-align: middle;
+}
+
+.ContentFilteredCollection {
+  font-size: 120%;
+  margin: 8px;
 }
 
 .ContentProperty {
@@ -29,7 +25,7 @@
   margin-right: 2px;
 }
 
-.ContentData {
+.ContentValue {
   display: inline-block;
   vertical-align: middle;
   font-size: 140%;

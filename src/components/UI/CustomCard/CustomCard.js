@@ -34,9 +34,9 @@ const card = props => {
           const property = apiPropertyParser(fp[0]);
           const value = apiValueParser(fp[1]);
           return (
-            <div key={`${props.objectId}_${property}`} className={classes.CardContent}>
+            <div key={`${props.objectId}_${property}`} className={classes.ContentFilteredCollection}>
               <div className={classes.ContentProperty}>{property} : </div>
-              <div className={classes.ContentData}>{value}</div>
+              <div className={classes.ContentValue}>{value}</div>
             </div>
           )
         })}
@@ -46,8 +46,8 @@ const card = props => {
 
   return (
     <Card style={{ ...cardStyle, ...props.cardStyle }}>
-      <CardActionArea>
-        <CardContent>
+      <CardActionArea className='mv-md'>
+        <CardContent className={classes.CardContent}>
           {card}
         </CardContent>
       </CardActionArea>
