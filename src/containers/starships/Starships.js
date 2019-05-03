@@ -12,7 +12,7 @@ import Loader from '../../components/UI/Loader/Loader';
 import * as actions from '../../store/actions/index';
 import classes from './Starships.module.css';
 
-import { getIdFromUrl, filterCollection } from '../../shared/utility';
+import { getIdFromUrl, filterCollection, randomRgbaGenerator } from '../../shared/utility';
 
 import sun from '../../assets/images/planets/sun.png';
 import venus from '../../assets/images/planets/venus.png';
@@ -47,18 +47,9 @@ const starships = props => {
 
           <Row middle='xs' center='xs' className='mt-sm'>
           {props.starships.results.map(starship => {
-              const starshipUrlId = getIdFromUrl(starship.url);
-
               const wantedProperties = ['name', 'model', 'passengers', 'starship_class', 'crew'];
-
               const filteredStarship = filterCollection(starship, wantedProperties, true);
-
-              const randomRgbaGenerator = () => {
-                const g = Math.floor(Math.random() * 80);
-                const b = Math.floor(Math.random() * 80);
-                const r = Math.floor(Math.random() * 80);
-                return 'rgba(' + r + ', ' + g + ', ' + b + ', 1)';
-              }
+              const starshipUrlId = getIdFromUrl(starship.url);
 
               return (
                 <Col xs={5} className="m-md" key={starshipUrlId}>
@@ -71,7 +62,7 @@ const starships = props => {
                       backgroundImage: `
                         url(${starshipsImgArray[starship.randomImgNumber]}),
                         linear-gradient(
-                          ${randomRgbaGenerator()},
+                          ${randomRgbaGenerator(80)},
                           rgba(0,0,0,0.3),
                           rgba(255, 255, 255, 0.8))
                       `,

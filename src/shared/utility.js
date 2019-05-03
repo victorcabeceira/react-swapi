@@ -29,3 +29,10 @@ export const filterCollection = (collection, properties, boolForComparison) => {
   const filteredCollection = Object.entries(collection).filter(c => boolForComparison ? properties.includes(c[0]) : !properties.includes(c[0]));
   return filteredCollection;
 }
+
+export const randomRgbaGenerator = (valueToMultiply) => {
+  const g = Math.floor(Math.random() * valueToMultiply);
+  const b = Math.floor(Math.random() * valueToMultiply);
+  const r = Math.floor(Math.random() * valueToMultiply);
+  return 'rgba(' + r + ', ' + g + ', ' + b + ', 1)';
+}
