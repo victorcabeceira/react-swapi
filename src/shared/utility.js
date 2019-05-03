@@ -24,3 +24,8 @@ export const getCollectionFromUrl = (fullUrl) => {
   const urlCollection = (apiCollectionRegex.exec(fullUrl))[0];
   return `${urlCollection}`
 }
+
+export const filterCollection = (collection, properties, boolForComparison) => {
+  const filteredCollection = Object.entries(collection).filter(c => boolForComparison ? properties.includes(c[0]) : !properties.includes(c[0]));
+  return filteredCollection;
+}

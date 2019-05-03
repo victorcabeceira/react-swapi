@@ -1,23 +1,36 @@
 import React, { useEffect } from 'react';
-// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Row, Col } from 'react-flexbox-grid';
 
-// import Card from '@material-ui/core/Card';
-// import CardActionArea from '@material-ui/core/CardActionArea';
-// import CardContent from '@material-ui/core/CardContent';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
 
 import Loader from '../../components/UI/Loader/Loader';
 // import Pagination from '../../components/Navigation/Pagination/Pagination';
 import * as actions from '../../store/actions/index';
 import classes from './Starships.module.css';
 
-// import { getIdFromUrl } from '../../shared/utility';
+import { getIdFromUrl, filterCollection } from '../../shared/utility';
+
+import sun from '../../assets/images/planets/sun.png';
+import venus from '../../assets/images/planets/venus.png';
+import mercury from '../../assets/images/planets/mercury.png';
+import earth from '../../assets/images/planets/earth.png';
+import moon from '../../assets/images/planets/moon.png';
+import mars from '../../assets/images/planets/mars.png';
+import jupiter from '../../assets/images/planets/jupiter.png';
+import saturn from '../../assets/images/planets/saturn.png';
+import neptune from '../../assets/images/planets/neptune.png';
+import uranus from '../../assets/images/planets/uranus.png';
 
 const starships = props => {
   useEffect(() => {
     props.onFetchStarships(props.starships.page);
   }, [props.starships.page]);
+
+  const starshipsImgArray = [sun, venus, mercury, earth, moon, mars, jupiter, saturn, neptune, uranus];
 
   let starships = <div><Loader style={{ background: '#FFD700' }} /></div>
   let pagination = <div className={classes.PaginationLoading}>Wait while the starships are loaded. . .</div>
@@ -33,8 +46,60 @@ const starships = props => {
           </Row>
 
           <Row middle='xs' center='xs' className='mt-sm'>
-            TODO
-            {/* Map starships and display them */}
+          {props.starships.results.map(starship => {
+              const starshipUrlId = getIdFromUrl(starship.url);
+
+              const wantedProperties = ['name', 'model', 'passengers', 'starship_class', 'crew'];
+
+              const filteredStarship = filterCollection(starship, wantedProperties, true);
+
+              const randomRgbaGenerator = () => {
+                const g = Math.floor(Math.random() * 80);
+                const b = Math.floor(Math.random() * 80);
+                const r = Math.floor(Math.random() * 80);
+                return 'rgba(' + r + ', ' + g + ', ' + b + ', 1)';
+              }
+
+              return (
+                <Col xs={5} className="m-md" key={starshipUrlId}>
+                  <NavLink
+                    to={`/starships/${starshipUrlId}`}
+                    key={starshipUrlId}
+                    style={{ textDecoration: 'none', color: '#E8E8E8' }}
+                  >
+                    <Card style={{
+                      backgroundImage: `
+                        url(${starshipsImgArray[starship.randomImgNumber]}),
+                        linear-gradient(
+                          ${randomRgbaGenerator()},
+                          rgba(0,0,0,0.3),
+                          rgba(255, 255, 255, 0.8))
+                      `,
+                      backgroundSize: 'cover',
+                    }}>
+                      <CardActionArea>
+                        <CardContent>
+                          <div className={classes.CardContentTitle}>
+                            Starship {starship.name}
+                          </div>
+                          {filteredStarship.map(fp => {
+                            let property = fp[0].charAt(0).toUpperCase() + fp[0].slice(1)
+                            property = property.replace('_', ' ')
+                            let value = Array.isArray(fp[1]) ? fp[1].length : fp[1];
+                            return (
+                              <div key={`${starshipUrlId[0]}_${fp[0]}`} className={classes.CardContent}>
+                                <div className={classes.ContentProperty}>{property} : </div>
+                                <div className={classes.ContentData}>{value}</div>
+                              </div>
+                            )
+                          })}
+                        </CardContent>
+                      </CardActionArea>
+                    </Card>
+                  </NavLink>
+                </Col>
+              )
+            })}
           </Row>
 
         </Col>
