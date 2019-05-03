@@ -14,7 +14,7 @@ export function* fetchStarshipsSaga(action) {
     for (const starship in response.data.results) {
       const starshipWithRandomImgNumber = {
         ...response.data.results[starship],
-        randomImgNumber: Math.floor(Math.random() * 9),
+        randomImgNumber: Math.floor(Math.random() * 6),
       }
       fetchedStarships.results.push(starshipWithRandomImgNumber);
     }

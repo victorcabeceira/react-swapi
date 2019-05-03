@@ -14,23 +14,19 @@ import classes from './Starships.module.css';
 
 import { getIdFromUrl, filterCollection, randomRgbaGenerator, apiPropertyParser, apiValueParser } from '../../shared/utility';
 
-import sun from '../../assets/images/planets/sun.png';
-import venus from '../../assets/images/planets/venus.png';
-import mercury from '../../assets/images/planets/mercury.png';
-import earth from '../../assets/images/planets/earth.png';
-import moon from '../../assets/images/planets/moon.png';
-import mars from '../../assets/images/planets/mars.png';
-import jupiter from '../../assets/images/planets/jupiter.png';
-import saturn from '../../assets/images/planets/saturn.png';
-import neptune from '../../assets/images/planets/neptune.png';
-import uranus from '../../assets/images/planets/uranus.png';
+import starship1 from '../../assets/images/starships/1.png';
+import starship2 from '../../assets/images/starships/2.png';
+import starship3 from '../../assets/images/starships/3.png';
+import starship4 from '../../assets/images/starships/4.png';
+import starship5 from '../../assets/images/starships/5.png';
+import starship6 from '../../assets/images/starships/6.png';
 
 const starships = props => {
   useEffect(() => {
     props.onFetchStarships(props.starships.page);
   }, [props.starships.page]);
 
-  const starshipsImgArray = [sun, venus, mercury, earth, moon, mars, jupiter, saturn, neptune, uranus];
+  const starshipsImgArray = [starship1, starship2, starship3, starship4, starship5, starship6];
 
   let starships = <div><Loader style={{ background: '#FFD700' }} /></div>
   let pagination = <div className={classes.PaginationLoading}>Wait while the starships are loaded. . .</div>
@@ -63,10 +59,12 @@ const starships = props => {
                         url(${starshipsImgArray[starship.randomImgNumber]}),
                         linear-gradient(
                           ${randomRgbaGenerator(80)},
-                          rgba(0,0,0,0.3),
-                          rgba(255, 255, 255, 0.8))
+                          rgba(0,0,0,0.35),
+                          rgba(30, 30, 30, 0.35))
                       `,
-                      backgroundSize: 'cover',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'center',
+                      backgroundSize: 'contain',
                     }}>
                       <CardActionArea>
                         <CardContent>
