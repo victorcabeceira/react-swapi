@@ -11,7 +11,7 @@ import * as actions from '../../store/actions/index';
 
 import classes from './Starships.module.css';
 
-import { getIdFromUrl, filterCollection, randomRgbaGenerator } from '../../shared/utility';
+import { getIdFromUrl, filterCollection } from '../../shared/utility';
 
 import starship1 from '../../assets/images/starships/1.png';
 import starship2 from '../../assets/images/starships/2.png';
@@ -45,17 +45,6 @@ const starships = props => {
               const wantedProperties = ['name', 'model', 'passengers', 'starship_class', 'crew'];
               const filteredStarship = filterCollection(starship, wantedProperties, true);
               const starshipUrlId = getIdFromUrl(starship.url);
-              const cardStyle = {
-                backgroundImage: `
-                  url(${starshipsImgArray[starship.randomImgNumber]}),
-                  linear-gradient(
-                    ${randomRgbaGenerator(80)},
-                    rgba(0,0,0,0.35),
-                    rgba(30, 30, 30, 0.35))`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                backgroundSize: 'contain'
-              }
 
               return (
                 <Col xs={5} className="m-md" key={starshipUrlId}>
@@ -66,10 +55,11 @@ const starships = props => {
                   >
                     <CustomCard
                       collection='Starship'
-                      title={starship.name}
-                      objectId={starshipUrlId}
+                      collectionImgArray={starshipsImgArray}
+                      collectionImgNumber={starship.randomImgNumber}
                       filteredCollection={filteredStarship}
-                      cardStyle={cardStyle}
+                      objectId={starshipUrlId}
+                      title={starship.name}
                     />
                   </NavLink>
                 </Col>

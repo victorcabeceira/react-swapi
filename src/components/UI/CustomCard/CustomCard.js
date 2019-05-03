@@ -4,12 +4,25 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 
-import { apiPropertyParser, apiValueParser } from '../../../shared/utility';
+import { randomRgbaGenerator, apiPropertyParser, apiValueParser } from '../../../shared/utility';
 
 import classes from './CustomCard.module.css';
 
 const card = props => {
+  const cardStyle = {
+    backgroundImage: `
+      url(${props.collectionImgArray[props.collectionImgNumber]}),
+      linear-gradient(
+        ${randomRgbaGenerator(80)},
+        rgba(0,0,0,0.35),
+        rgba(30, 30, 30, 0.35))`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: 'contain'
+  }
+
   let card = props.children;
+
 
   if (props.filteredCollection) {
     card = (
@@ -32,7 +45,7 @@ const card = props => {
   }
 
   return (
-    <Card style={{ ...props.cardStyle }}>
+    <Card style={{ ...cardStyle, ...props.cardStyle }}>
       <CardActionArea>
         <CardContent>
           {card}
