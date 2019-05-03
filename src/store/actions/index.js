@@ -3,11 +3,18 @@ export {
   fetchPlanetsStart,
   fetchPlanetsSuccess,
   fetchPlanetsFail,
-} from './planets'
+} from './planets';
 
 export {
   fetchPlanet,
   fetchPlanetStart,
   fetchPlanetSuccess,
   fetchPlanetFail,
-} from './planet'
+} from './planet';
+
+export {
+  fetchStarships,
+  fetchStarshipsStart,
+  fetchStarshipsSuccess,
+  fetchStarshipsFail,
+} from './starships';
