@@ -21,6 +21,8 @@ const card = props => {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     backgroundSize: 'contain',
+    width: '100%',
+    height: '100%',
     maxHeight: '1024px'
   }
 
@@ -28,7 +30,7 @@ const card = props => {
 
   if (props.filteredCollection && !props.singleData) {
     card = (
-      <CardActionArea className='mv-md'>
+      <CardActionArea className={`${classes.CardContentArea} mv-md`}>
         <CardContent className={classes.CardContent}>
           <div className={classes.CardContentTitle}>
             {props.collection} : {props.title}

@@ -1,9 +1,12 @@
 /* ----------------MULTIPLE--------------- */
-
 .CardContentTitle {
   color: #FFD700;
   font-size: 180%;
   padding: 8px 0px 4px;
+}
+
+.CardContentArea {
+  height: 100%;
 }
 
 .CardContent {
