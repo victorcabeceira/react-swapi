@@ -82,7 +82,7 @@ const starships = props => {
   }
 
   return (
-    <div style={{ marginBottom: 60 }}>
+    <div className={classes.MainStarships}>
       {starships}
       {pagination}
     </div>
