@@ -2,3 +2,39 @@
   color: #FFFFFF;
   /* color: #E8E8E8; */
 }
+
+.NavItemRow {
+  width: 100%;
+  border-bottom: 1px solid white;
+  padding: 8px 0 8px;
+  margin: 0;
+}
+
+.NavLinkMainDiv {
+  color: #E8E8E8;
+  font-family: 'Death star font';
+  font-size: 130%;
+  justify-content: center;
+}
+
+.NavItemTitle {
+  color: #E8E8E8;
+  display: inline-block;
+  font-family: 'Death star font';
+  font-size: 140%;
+  font-weight: lighter;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+
+.NavItemIconCol {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 4px 0 0;
+  margin: 0;
+  border-right: #E8E8E8 1.5px solid;
+}
+
+.NavItemIcon {
+
+}
