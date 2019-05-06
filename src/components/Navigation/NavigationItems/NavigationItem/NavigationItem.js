@@ -12,8 +12,6 @@ const navigationItem = (props) => {
   const { pathname } = location;
   const active = (pathname === to);
 
-  console.log('[navitem] props', props);
-
   let navItem = (
     <div className={classes.NavLink}>
       <Tooltip title={props.title}>
