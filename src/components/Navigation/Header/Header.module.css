@@ -1,0 +1,29 @@
+.MobileOnly {
+  display: none;
+}
+
+.DesktopOnly {
+  display: block;
+}
+
+@media (max-width: 567px) {
+  .MobileOnly {
+    display: inline-block;
+  }
+
+  .MobileOnly .Icon {
+    margin: 20px 12px 12px 0;
+  }
+
+  .MobileOnly .Image {
+    height: 100%;
+    width: 100%;
+    max-width: 120px;
+    align-content: center;
+    padding-left: 12px;
+  }
+
+  .DesktopOnly {
+    display: none;
+  }
+}
