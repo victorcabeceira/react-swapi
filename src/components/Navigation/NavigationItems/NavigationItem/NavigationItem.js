@@ -5,12 +5,20 @@ import { Row, Col } from 'react-flexbox-grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Tooltip from '@material-ui/core/Tooltip';
 
+import { getCollectionFromUrl } from '../../../../shared/utility';
+
 import classes from './NavigationItem.module.css'
 
 const navigationItem = (props) => {
   const { to, location } = props;
   const { pathname } = location;
-  const active = (pathname === to);
+  let active = false;
+  if (Number.isInteger(parseInt(pathname.slice(-1), 10))) {
+    const collection = (getCollectionFromUrl(pathname + '/'));
+    active = (collection === to.slice(1));
+  } else {
+    active = (pathname === to);
+  }
 
   let navItem = (
     <div className={classes.NavLink}>
