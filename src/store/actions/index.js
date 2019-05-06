@@ -25,3 +25,10 @@ export {
   fetchStarshipSuccess,
   fetchStarshipFail,
 } from './starship';
+
+export {
+  fetchVehicles,
+  fetchVehiclesStart,
+  fetchVehiclesSuccess,
+  fetchVehiclesFail,
+} from './vehicles';
