@@ -47,7 +47,7 @@ const starships = props => {
               const starshipUrlId = getIdFromUrl(starship.url);
 
               return (
-                <Col xs={5} className={`${classes.StarshipsCol} m-md`} key={starshipUrlId}>
+                <Col xs={10} md={5} className={`${classes.StarshipsCol} m-md`} key={starshipUrlId}>
                   <NavLink
                     to={`/starships/${starshipUrlId}`}
                     key={starshipUrlId}

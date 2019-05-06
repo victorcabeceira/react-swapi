@@ -44,14 +44,14 @@ const planets = props => {
             </Col>
           </Row>
 
-          <Row middle='xs' center='xs' className='mt-sm'>
+          <Row middle='xs' center='xs' className={`${classes.PlanetsRow} mt-sm`}>
             {props.planets.results.map(planet => {
               const wantedProperties = ['name', 'climate', 'gravity', 'population', 'films'];
               const filteredPlanet = filterCollection(planet, wantedProperties, true);
               const planetUrlId = getIdFromUrl(planet.url);
 
               return (
-                <Col xs={5} className="m-md" key={planetUrlId}>
+                <Col xs={10} md={5} className={`${classes.PlanetsCol} m-md`} key={planetUrlId}>
                   <NavLink
                     to={`/planets/${planetUrlId}`}
                     key={planetUrlId}
@@ -86,7 +86,7 @@ const planets = props => {
   }
 
   return (
-    <div style={{ marginBottom: 60 }}>
+    <div className={classes.MainPlanets}>
       {planets}
       {pagination}
     </div>

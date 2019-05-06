@@ -4,3 +4,53 @@
   font-size: 200%;
   text-align: center;
 }
+
+.MainPlanets {
+  padding-bottom: 300px;
+}
+
+.PlanetsRow {
+  height: 100%;
+}
+
+@media (max-width: 999px) {
+  .PlanetsCol {
+    height: 420px;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1449px) {
+  .PlanetsCol {
+    height: 370px;
+  }
+}
+
+@media (min-width: 1451px) {
+  .PlanetsCol {
+    height: 310px;
+  }
+}
+
+@media (max-height: 1024px) {
+  .MainPlanets {
+    padding-bottom: 0px;
+  }
+}
+
+@media (min-height: 1025px) and (max-height: 1079px) {
+  .MainPlanets {
+    padding-bottom: 124px;
+  }
+}
+
+@media (min-height: 1080px) and (max-height: 1199px) {
+  .MainPlanets {
+    padding-bottom: 0px;
+  }
+}
+
+@media (min-height: 1200px) {
+  .MainPlanets {
+    padding-bottom: 54px;
+  }
+}

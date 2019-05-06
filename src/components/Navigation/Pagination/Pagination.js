@@ -27,7 +27,7 @@ const pagination = props => {
             style={{
               backgroundColor: '#FFFFFF',
               color: '#2F2F2F',
-              margin: '0px 4px 0px',
+              margin: '8px 4px 0px',
               ...customStyle,
               ...props.buttonStyle,
             }}
