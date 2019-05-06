@@ -26,7 +26,6 @@ const navigationItem = (props) => {
         <NavLink
           to={props.to}
           exact={props.exact}
-          onClick={() => console.log(`${props.title} was clicked`)}
         >
           <FontAwesomeIcon
             icon={props.icon}

@@ -39,7 +39,6 @@ const header = props => {
                       <NavLink
                         to={'/'}
                         exact
-                        onClick={() => console.log(`logo was clicked`)}
                       >
                         <Logo />
                       </NavLink>
