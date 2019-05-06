@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { NavLink } from 'react-router-dom';
 
@@ -7,6 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
+import SideDrawer from './SideDrawer/SideDrawer';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import Logo from '../../../components/Logo/Logo';
 import Image from '../../../components/UI/Image/Image';
@@ -15,6 +16,16 @@ import swImg from '../../../assets/images/sw_logo_g_tm.png';
 import classes from './Header.module.css';
 
 const header = props => {
+  const [openDrawer, setOpenDrawer] = useState(false);
+
+  const sideDrawerOpenHandler = () => {
+    setOpenDrawer(true);
+  }
+
+  const sideDrawerCloseHandler = () => {
+    setOpenDrawer(!openDrawer);
+  }
+
   return (
     <div className={classes.Root}>
       <AppBar position='static' style={{ background: '#222' }}>
@@ -39,7 +50,12 @@ const header = props => {
                           icon={faBars}
                           size='2x'
                           color='#FFFFFF'
-                          onClick={() => console.log('Icon clicked')}
+                          onClick={() => sideDrawerOpenHandler()}
+                        />
+                        <SideDrawer
+                          openDrawer={openDrawer}
+                          sideDrawerCloseHandler={sideDrawerCloseHandler}
+                          {...props}
                         />
                       </div>
                     </div>
