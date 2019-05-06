@@ -4,13 +4,11 @@
 
 .Content {
   margin: 0;
-  height: 100vh;
 }
 
 @media (min-height: 1024px) {
   .Content {
     margin: 0 0 60px;
-    height: 100vh;
   }
 }
 
