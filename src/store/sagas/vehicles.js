@@ -14,7 +14,7 @@ export function* fetchVehiclesSaga(action) {
     for (const vehicle in response.data.results) {
       const vehicleWithRandomImgNumber = {
         ...response.data.results[vehicle],
-        randomImgNumber: Math.floor(Math.random() * 6),
+        randomImgNumber: Math.floor(Math.random() * 4),
       }
       fetchedVehicles.results.push(vehicleWithRandomImgNumber);
     }
