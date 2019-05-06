@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
+import { Grid, Row } from 'react-flexbox-grid';
 
 import Backdrop from '../../../UI/Backdrop/Backdrop';
-// import NavigationItems from '../../NavigationItems/NavigationItems';
+import NavigationItems from '../../NavigationItems/NavigationItems';
 import Image from '../../../../components/UI/Image/Image';
 import swImg from '../../../../assets/images/sw_logo_g_tm.png';
 
@@ -22,19 +23,21 @@ const sideDrawer = (props) => {
         show={openDrawer}
         onClick={sideDrawerCloseHandler}
       />
-      <div className={attachedClasses.join(' ')} onClick={sideDrawerCloseHandler}>
+      <Grid fluid className={attachedClasses.join(' ')} onClick={sideDrawerCloseHandler}>
+        <Row center='xs' middle='xs' className={classes.LogoRow}>
+          <div className={classes.Logo}>
+            <Image
+              src={swImg}
+              alt='Star Wars logo'
+              style={{ alignContent: 'center' }}
+            />
+          </div>
+        </Row>
 
-        <div className={classes.Logo}>
-          <Image
-            src={swImg}
-            alt='Star Wars logo'
-            style={{ alignContent: 'center' }}
-          />
+        <div className={classes.navigationItemsDiv}>
+          <NavigationItems {...props} mobile />
         </div>
-        <nav>
-          NavigationItems
-        </nav>
-      </div>
+      </Grid>
     </Fragment>
   )
 }
