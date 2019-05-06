@@ -7,14 +7,16 @@ import classes from './Layout.module.css';
 
 const layout = props => {
   return (
-    <div style={{ background: '#363636' }}>
+    <div className={classes.Layout}>
       <CustomHeader {...props} />
 
-        <div className={classes.Content}>
-          {props.children}
-        </div>
+      <div className={classes.Content}>
+        {props.children}
+      </div>
 
-      <CustomFooter {...props} />
+      <div className={classes.Footer}>
+        <CustomFooter {...props} />
+      </div>
     </div>
   )
 }
