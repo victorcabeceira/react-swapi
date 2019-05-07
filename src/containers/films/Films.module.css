@@ -1,0 +1,68 @@
+.Films, .PaginationLoading {
+  color: #E8E8E8;
+  font-family: 'Death star font';
+  font-size: 200%;
+  text-align: center;
+}
+
+.MainFilms {
+  padding-bottom: 300px;
+}
+
+.FilmsRow {
+  height: 100%;
+}
+
+@media (max-width: 500px) {
+  .FilmsCol {
+    height: 500px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 999px) {
+  .FilmsCol {
+    height: 500px;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1365px) {
+  .FilmsCol {
+    height: 470px;
+  }
+}
+
+@media (min-width: 1366px) and (max-width: 1450px) {
+  .FilmsCol {
+    height: 360px;
+  }
+}
+
+@media (min-width: 1451px) {
+  .FilmsCol {
+    height: 310px;
+  }
+}
+
+@media (max-height: 1024px) {
+  .MainFilms {
+    padding-bottom: 0px;
+  }
+}
+
+@media (min-height: 1025px) and (max-height: 1079px) {
+  .MainFilms {
+    padding-bottom: 124px;
+  }
+}
+
+@media (min-height: 1080px) and (max-height: 1199px) {
+  .MainFilms {
+    padding-bottom: 0px;
+  }
+}
+
+@media (min-height: 1200px) {
+  .MainFilms {
+    padding-bottom: 54px;
+  }
+}

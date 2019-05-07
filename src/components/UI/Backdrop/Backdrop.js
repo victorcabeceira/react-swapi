@@ -7,9 +7,7 @@ const backdrop = (props) => (
   <div
     className={classes.Backdrop}
     onClick={props.onClick}
-  >
-
-  </div>
+  />
   : null
 )
 
