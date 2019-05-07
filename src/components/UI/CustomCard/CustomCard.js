@@ -65,6 +65,9 @@ const card = props => {
           if (Array.isArray(fp[1])) {
             hasUrls = true;
             fp[1].forEach(url => filteredUrls.push(filterUrl(url)));
+          } else if (fp[0] === 'homeworld') {
+            hasUrls = true;
+            filteredUrls.push(filterUrl(fp[1]));
           }
 
           return (
