@@ -36,6 +36,10 @@ import {
   fetchFilmsSaga
 } from './films';
 
+import {
+  fetchFilmSaga
+} from './film';
+
 import * as actionTypes from '../actions/actionTypes';
 
 export function* watchPlanets() {
@@ -72,4 +76,9 @@ export function* watchPerson() {
 
 export function* watchFilms() {
   yield takeLatest(actionTypes.FETCH_FILMS, fetchFilmsSaga);
+}
+
+
+export function* watchFilm() {
+  yield takeLatest(actionTypes.FETCH_FILM, fetchFilmSaga);
 }
