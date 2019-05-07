@@ -74,3 +74,10 @@ export {
   fetchSpeciesSuccess,
   fetchSpeciesFail,
 } from './species';
+
+export {
+  fetchSpecie,
+  fetchSpecieStart,
+  fetchSpecieSuccess,
+  fetchSpecieFail,
+} from './specie';
