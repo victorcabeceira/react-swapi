@@ -39,3 +39,10 @@ export {
   fetchVehicleSuccess,
   fetchVehicleFail,
 } from './vehicle';
+
+export {
+  fetchPeople,
+  fetchPeopleStart,
+  fetchPeopleSuccess,
+  fetchPeopleFail,
+} from './people';
