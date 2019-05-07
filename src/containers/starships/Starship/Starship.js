@@ -7,6 +7,9 @@ import NextItem from '../../../components/UI/NextItem/NextItem';
 import CustomCard from '../../../components/UI/CustomCard/CustomCard';
 import * as actions from '../../../store/actions/index';
 
+import axios from '../../../axios-swapi';
+import withErrorHandler from '../../../hoc/WithErrorHandler/WithErrorHandler';
+
 import { filterCollection, getIdFromUrl } from '../../../shared/utility';
 
 import starship1 from '../../../assets/images/starships/1.png';
@@ -100,4 +103,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(starship);
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(starship, axios));

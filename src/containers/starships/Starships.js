@@ -7,6 +7,9 @@ import Loader from '../../components/UI/Loader/Loader';
 import Pagination from '../../components/Navigation/Pagination/Pagination';
 import CustomCard from '../../components/UI/CustomCard/CustomCard';
 
+import axios from '../../axios-swapi';
+import withErrorHandler from '../../hoc/WithErrorHandler/WithErrorHandler';
+
 import { getIdFromUrl, filterCollection } from '../../shared/utility';
 
 import * as actions from '../../store/actions/index';
@@ -103,4 +106,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(starships);
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(starships, axios));

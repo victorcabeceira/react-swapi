@@ -7,6 +7,9 @@ import NextItem from '../../../components/UI/NextItem/NextItem';
 import CustomCard from '../../../components/UI/CustomCard/CustomCard';
 import * as actions from '../../../store/actions/index';
 
+import axios from '../../../axios-swapi';
+import withErrorHandler from '../../../hoc/WithErrorHandler/WithErrorHandler';
+
 import { filterCollection, getIdFromUrl } from '../../../shared/utility';
 
 import sun from '../../../assets/images/planets/sun.png';
@@ -103,4 +106,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(planet);
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(planet, axios));
