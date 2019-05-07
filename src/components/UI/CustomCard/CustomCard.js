@@ -116,6 +116,8 @@ const card = props => {
             filteredUrls.push(filterUrl(fp[1]));
           }
 
+          console.log('property', property);
+
           return (
             <div key={`${fp.name}_${fp[0]}`} className={classes.SingleCardContent}>
               <div className={classes.SingleContentProperty}>{property} : {hasUrls ? `${filteredUrls.length}` : null}</div>
@@ -133,7 +135,8 @@ const card = props => {
                   )
                 })
                 :
-                <div className={classes.SingleContentData}>{value}</div>
+                <div className={property === 'Opening crawl' ?
+                  classes.SingleContentDataYellow : classes.SingleContentData}>{value}</div>
               }
             </div>
           )

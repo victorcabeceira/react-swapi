@@ -36,7 +36,7 @@ const film = props => {
     film = (
       <CustomCard
         collectionImgArray={filmsImgArray}
-        collectionImgNumber={parseInt(props.film.episode_id, 10)}
+        collectionImgNumber={parseInt(props.film.episode_id, 10) - 1}
         filteredCollection={filteredFilm}
         objectId={filmUrlId}
         title={props.film.name}
@@ -47,13 +47,13 @@ const film = props => {
 
   const actualFilmId = props.match.params.id;
   const previousFilmId = actualFilmId <= 1 ? 1 : parseInt(props.match.params.id, 10) - 1;
-  const nextFilmId = actualFilmId >= 61 ? 61 : parseInt(props.match.params.id, 10) + 1;
+  const nextFilmId = actualFilmId >= 7 ? 7 : parseInt(props.match.params.id, 10) + 1;
 
   return (
     <Row style={{ margin: 0, height: '100vh', minHeight: '600px', maxHeight: '1024px' }} middle='xs' center='xs'>
       <Col xs={2}>
         <NextItem
-          to={`/people/${previousFilmId}/`}
+          to={`/films/${previousFilmId}/`}
           style={{ textDecoration: 'none', color: '#FFFFFF' }}
           previous
           size='lg'
@@ -70,12 +70,12 @@ const film = props => {
 
       <Col xs={2}>
         <NextItem
-          to={`/people/${nextFilmId}/`}
+          to={`/films/${nextFilmId}/`}
           style={{ textDecoration: 'none', color: '#FFFFFF' }}
           size='lg'
           color='#FFFFFF'
           title='Next film'
-          maxId={61}
+          maxId={7}
           actualId={parseInt(actualFilmId)}
         />
       </Col>
