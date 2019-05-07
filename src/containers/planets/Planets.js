@@ -16,23 +16,12 @@ import * as actions from '../../store/actions/index';
 
 import classes from './Planets.module.css';
 
-import sun from '../../assets/images/planets/sun.png';
-import venus from '../../assets/images/planets/venus.png';
-import mercury from '../../assets/images/planets/mercury.png';
-import earth from '../../assets/images/planets/earth.png';
-import moon from '../../assets/images/planets/moon.png';
-import mars from '../../assets/images/planets/mars.png';
-import jupiter from '../../assets/images/planets/jupiter.png';
-import saturn from '../../assets/images/planets/saturn.png';
-import neptune from '../../assets/images/planets/neptune.png';
-import uranus from '../../assets/images/planets/uranus.png';
+import planetsImgArray from '../../assets/images/planets';
 
 const planets = props => {
   useEffect(() => {
     props.onFetchPlanets(props.planets.page);
   }, [props.planets.page]);
-
-  const planetsImgArray = [sun, venus, mercury, earth, moon, mars, jupiter, saturn, neptune, uranus];
 
   let planets = <div><Loader style={{ background: '#FFD700' }} /></div>
   let pagination = <div className={classes.PaginationLoading}>Wait while the planets are loaded. . .</div>
