@@ -12,12 +12,7 @@ import withErrorHandler from '../../../hoc/WithErrorHandler/WithErrorHandler';
 
 import { filterCollection, getIdFromUrl } from '../../../shared/utility';
 
-import starship1 from '../../../assets/images/starships/1.png';
-import starship2 from '../../../assets/images/starships/2.png';
-import starship3 from '../../../assets/images/starships/3.png';
-import starship4 from '../../../assets/images/starships/4.png';
-import starship5 from '../../../assets/images/starships/5.png';
-import starship6 from '../../../assets/images/starships/6.png';
+import starshipsImgArray from '../../../assets/images/starships';
 
 const starship = props => {
   useEffect(() => {
@@ -34,7 +29,6 @@ const starship = props => {
   const unwantedProperties = ['randomImgNumber', 'url', 'created', 'edited'];
   const filteredStarship = filterCollection(props.starship, unwantedProperties, false);
   const starshipUrlId = props.match.params.id;
-  const starshipsImgArray = [starship1, starship2, starship3, starship4, starship5, starship6];
 
   let starship = <div><Loader style={{ background: '#FFD700' }} /></div>
 
