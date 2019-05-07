@@ -54,6 +54,10 @@ const Species = lazy(() => {
   return import('./containers/species/Species');
 });
 
+const Specie = lazy(() => {
+  return import('./containers/species/specie/Specie');
+});
+
 const MainPage = lazy(() => {
   return import('./containers/mainPage/mainPage');
 });
@@ -83,6 +87,7 @@ const app = props => {
       <Route exact path='/films' component={Films} />
       <Route exact path={`/films/:id`} component={Film}/>
       <Route exact path='/species' component={Species} />
+      <Route exact path={`/species/:id`} component={Specie}/>
       <Route path='/' component={MainPage} />
       <Redirect to='/' />
     </AnimatedSwitch>

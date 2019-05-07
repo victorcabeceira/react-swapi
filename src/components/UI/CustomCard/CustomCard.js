@@ -75,11 +75,11 @@ const card = props => {
             <Row start='md' center='xs'>
               <Col xs={12} md={4}>
                 <div className={classes.FilmPoster}>
-                  <div style={posterDivStyle} className={classes.FilmPosterDiv}/>
+                  <div style={posterDivStyle} className={classes.FilmPosterDiv} />
                 </div>
               </Col>
-              <Col xs={12} md={8} style={{ margin: '4px 0 4px'}}>
-                { collectionInformation }
+              <Col xs={12} md={8} style={{ margin: '4px 0 4px' }}>
+                {collectionInformation}
               </Col>
             </Row>
           </CardContent>
@@ -89,7 +89,7 @@ const card = props => {
       card = (
         <CardActionArea className={`${classes.CardContentArea} mv-md`}>
           <CardContent className={classes.CardContent}>
-            { collectionInformation }
+            {collectionInformation}
           </CardContent>
         </CardActionArea>
       )
@@ -112,11 +112,11 @@ const card = props => {
             hasUrls = true;
             fp[1].forEach(url => filteredUrls.push(filterUrl(url)));
           } else if (fp[0] === 'homeworld') {
-            hasUrls = true;
-            filteredUrls.push(filterUrl(fp[1]));
+            if (fp[1]) {
+              hasUrls = true;
+              filteredUrls.push(filterUrl(fp[1]));
+            }
           }
-
-          console.log('property', property);
 
           return (
             <div key={`${fp.name}_${fp[0]}`} className={classes.SingleCardContent}>
