@@ -67,3 +67,10 @@ export {
   fetchFilmSuccess,
   fetchFilmFail,
 } from './film';
+
+export {
+  fetchSpecies,
+  fetchSpeciesStart,
+  fetchSpeciesSuccess,
+  fetchSpeciesFail,
+} from './species';
