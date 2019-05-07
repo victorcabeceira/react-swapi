@@ -39,6 +39,12 @@
   font-size: 140%;
 }
 
+.FilmPoster {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+
 /* ----------------SINGLE--------------- */
 
 .SingleCardContent {
@@ -72,4 +78,10 @@
   display: inline-block;
   vertical-align: middle;
   font-size: 140%;
+}
+
+@media (max-width: 425px) {
+  .FilmPoster {
+    height: 0;
+  }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Col } from 'react-flexbox-grid';
 
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -29,25 +30,70 @@ const card = props => {
   let card = props.children;
 
   if (props.filteredCollection && !props.singleData) {
-    card = (
-      <CardActionArea className={`${classes.CardContentArea} mv-md`}>
-        <CardContent className={classes.CardContent}>
-          <div className={classes.CardContentTitle}>
-            {props.collection} : {props.title}
-          </div>
-          {props.filteredCollection.map(fp => {
-            const property = apiPropertyParser(fp[0]);
-            const value = apiValueParser(fp[1]);
-            return (
-              <div key={`${props.objectId}_${property}`} className={classes.ContentFilteredCollection}>
-                <div className={classes.ContentProperty}>{property} : </div>
-                <div className={classes.ContentValue}>{value}</div>
-              </div>
-            )
-          })}
-        </CardContent>
-      </CardActionArea>
+    const collectionInformation = (
+      <div>
+        <div className={classes.CardContentTitle}>
+          {props.collection} : {props.title}
+        </div>
+        {props.filteredCollection.map(fp => {
+          const property = apiPropertyParser(fp[0]);
+          const value = apiValueParser(fp[1]);
+          return (
+            <div key={`${props.objectId}_${property}`} className={classes.ContentFilteredCollection}>
+              <div className={classes.ContentProperty}>{property} : </div>
+              <div className={classes.ContentValue}>{value}</div>
+            </div>
+          )
+        })}
+      </div>
     )
+
+    if (props.collection === 'Film') {
+      cardStyle = {
+        background: `
+          linear-gradient(
+            ${randomRgbaGenerator(80)},
+            rgba(0,0,0,0.35),
+            rgba(255, 255, 255, 0.7))`,
+        width: '100%',
+        height: '100%',
+        maxHeight: '1024px'
+      }
+
+      const posterDivStyle = {
+        backgroundImage: `url(${props.collectionImgArray[props.collectionImgNumber]})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundSize: 'contain',
+        width: '100%',
+        height: '100%',
+      }
+
+      card = (
+        <CardActionArea className={`${classes.CardContentArea} mv-md`}>
+          <CardContent className={classes.CardContent}>
+            <Row start='md' center='xs'>
+              <Col xs={12} md={4}>
+                <div className={classes.FilmPoster}>
+                  <div style={posterDivStyle} className={classes.FilmPosterDiv}/>
+                </div>
+              </Col>
+              <Col xs={12} md={8} style={{ margin: '4px 0 4px'}}>
+                { collectionInformation }
+              </Col>
+            </Row>
+          </CardContent>
+        </CardActionArea>
+      )
+    } else {
+      card = (
+        <CardActionArea className={`${classes.CardContentArea} mv-md`}>
+          <CardContent className={classes.CardContent}>
+            { collectionInformation }
+          </CardContent>
+        </CardActionArea>
+      )
+    }
   } else if (props.singleData) {
     cardStyle = { ...cardStyle, ...{ margin: '10px 0px 40px' } };
     card = (

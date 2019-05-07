@@ -42,7 +42,6 @@ const films = props => {
               const filteredFilm = filterCollection(film, wantedProperties, true);
               const filmUrlId = getIdFromUrl(film.url);
 
-              console.log('episode_id', film.episode_id)
               return (
                 <Col xs={10} md={5} className={`${classes.FilmsCol} m-md`} key={filmUrlId}>
                   <NavLink
@@ -51,7 +50,7 @@ const films = props => {
                     style={{ textDecoration: 'none', color: '#E8E8E8' }}
                   >
                     <CustomCard
-                      collection='Films'
+                      collection='Film'
                       collectionImgArray={filmsImgArray}
                       collectionImgNumber={parseInt(film.episode_id, 10) - 1}
                       filteredCollection={filteredFilm}
