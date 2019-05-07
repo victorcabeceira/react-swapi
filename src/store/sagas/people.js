@@ -14,7 +14,7 @@ export function* fetchPeopleSaga(action) {
     for (const person in response.data.results) {
       const peopleWithRandomImgNumber = {
         ...response.data.results[person],
-        randomImgNumber: Math.floor(Math.random() * 9),
+        randomImgNumber: Math.floor(Math.random() * 11),
       }
       fetchedPeople.results.push(peopleWithRandomImgNumber);
     }

@@ -16,19 +16,13 @@ import * as actions from '../../store/actions/index';
 
 import classes from './People.module.css';
 
-import starship1 from '../../assets/images/starships/1.png';
-import starship2 from '../../assets/images/starships/2.png';
-import starship3 from '../../assets/images/starships/3.png';
-import starship4 from '../../assets/images/starships/4.png';
-import starship5 from '../../assets/images/starships/5.png';
-import starship6 from '../../assets/images/starships/6.png';
+import peopleImgArray from '../../assets/images/people';
+
 
 const people = props => {
   useEffect(() => {
     props.onFetchPeople(props.people.page);
   }, [props.people.page]);
-
-  const peopleImgArray = [starship1, starship2, starship3, starship4, starship5, starship6];
 
   let people = <div><Loader style={{ background: '#FFD700' }} /></div>
   let pagination = <div className={classes.PaginationLoading}>Wait while the people are loaded. . .</div>
