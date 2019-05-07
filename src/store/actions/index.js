@@ -60,3 +60,10 @@ export {
   fetchFilmsSuccess,
   fetchFilmsFail,
 } from './films';
+
+export {
+  fetchFilm,
+  fetchFilmStart,
+  fetchFilmSuccess,
+  fetchFilmFail,
+} from './film';
