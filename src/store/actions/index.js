@@ -46,3 +46,10 @@ export {
   fetchPeopleSuccess,
   fetchPeopleFail,
 } from './people';
+
+export {
+  fetchPerson,
+  fetchPersonStart,
+  fetchPersonSuccess,
+  fetchPersonFail,
+} from './person';
