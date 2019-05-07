@@ -16,6 +16,7 @@ import peopleReducer from './store/reducers/people';
 import personReducer from './store/reducers/person';
 import filmsReducer from './store/reducers/films';
 import filmReducer from './store/reducers/film';
+import speciesReducer from './store/reducers/species';
 
 import {
   watchPlanets,
@@ -27,7 +28,8 @@ import {
   watchPeople,
   watchPerson,
   watchFilms,
-  watchFilm
+  watchFilm,
+  watchSpecies
 } from './store/sagas';
 
 import './index.css';
@@ -46,7 +48,8 @@ const rootReducer = combineReducers({
   people: peopleReducer,
   person: personReducer,
   films: filmsReducer,
-  film: filmReducer
+  film: filmReducer,
+  species: speciesReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();
@@ -65,6 +68,7 @@ sagaMiddleware.run(watchPeople);
 sagaMiddleware.run(watchPerson);
 sagaMiddleware.run(watchFilms);
 sagaMiddleware.run(watchFilm);
+sagaMiddleware.run(watchSpecies);
 
 const app = (
   <Provider store={store}>
