@@ -1,10 +1,9 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 
-import { faHome, faGlobe, faFilm, faFighterJet, faSpaceShuttle, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faGlobe, faFilm, faFighterJet, faDna, faUser, faRocket } from '@fortawesome/free-solid-svg-icons'
 
 import NavigationItem from './NavigationItem/NavigationItem';
-// import classes from './NavigationItems.module.css'
 
 const navigationItems = (props) => {
   let navigationItemsDiv = <div></div>;
@@ -17,8 +16,15 @@ const navigationItems = (props) => {
       to: '/people'
     },
     {
+      title: 'Species',
+      icon: faDna,
+      size: 'lg',
+      color: '#8C8C8C',
+      to: '/species'
+    },
+    {
       title: 'Starships',
-      icon: faSpaceShuttle,
+      icon: faRocket,
       size: 'lg',
       color: '#8C8C8C',
       to: '/starships'
