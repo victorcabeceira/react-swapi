@@ -17,7 +17,7 @@ import peopleImgArray from '../../../assets/images/people';
 const person = props => {
   useEffect(() => {
     const personUrlId = getIdFromUrl(props.match.url)
-    const parsedPersonUrlId = personUrlId <= 1 ? 1 : (personUrlId > 61 ? 61 : personUrlId);
+    const parsedPersonUrlId = personUrlId <= 1 ? 1 : (personUrlId > 87 ? 87 : personUrlId);
 
     if (personUrlId > 87 || personUrlId < 1) {
       props.history.push(`/people/${parsedPersonUrlId}`);
@@ -47,7 +47,7 @@ const person = props => {
 
   const actualPersonId = props.match.params.id;
   const previousPersonId = actualPersonId <= 1 ? 1 : parseInt(props.match.params.id, 10) - 1;
-  const nextPersonId = actualPersonId >= 61 ? 61 : parseInt(props.match.params.id, 10) + 1;
+  const nextPersonId = actualPersonId >= 87 ? 87 : parseInt(props.match.params.id, 10) + 1;
 
   return (
     <Row style={{ margin: 0, height: '100vh', minHeight: '600px', maxHeight: '1024px' }} middle='xs' center='xs'>
@@ -75,7 +75,7 @@ const person = props => {
           size='lg'
           color='#FFFFFF'
           title='Next person'
-          maxId={61}
+          maxId={87}
           actualId={parseInt(actualPersonId)}
         />
       </Col>
