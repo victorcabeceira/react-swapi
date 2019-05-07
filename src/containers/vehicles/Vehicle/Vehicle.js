@@ -12,10 +12,7 @@ import withErrorHandler from '../../../hoc/WithErrorHandler/WithErrorHandler';
 
 import { filterCollection, getIdFromUrl } from '../../../shared/utility';
 
-import vehicle1 from '../../../assets/images/vehicles/1.png';
-import vehicle2 from '../../../assets/images/vehicles/2.png';
-import vehicle3 from '../../../assets/images/vehicles/3.png';
-import vehicle4 from '../../../assets/images/vehicles/4.png';
+import vehiclesImgArray from '../../../assets/images/vehicles';
 
 const vehicle = props => {
   useEffect(() => {
@@ -32,7 +29,6 @@ const vehicle = props => {
   const unwantedProperties = ['randomImgNumber', 'url', 'created', 'edited'];
   const filteredVehicle = filterCollection(props.vehicle, unwantedProperties, false);
   const vehicleUrlId = props.match.params.id;
-  const vehiclesImgArray = [vehicle1, vehicle2, vehicle3, vehicle4];
 
   let vehicle = <div><Loader style={{ background: '#FFD700' }} /></div>
 

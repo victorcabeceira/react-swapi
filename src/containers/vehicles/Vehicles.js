@@ -16,17 +16,12 @@ import * as actions from '../../store/actions/index';
 
 import classes from './Vehicles.module.css';
 
-import vehicle1 from '../../assets/images/vehicles/1.png';
-import vehicle2 from '../../assets/images/vehicles/2.png';
-import vehicle3 from '../../assets/images/vehicles/3.png';
-import vehicle4 from '../../assets/images/vehicles/4.png';
+import vehiclesImgArray from '../../assets/images/vehicles';
 
 const vehicles = props => {
   useEffect(() => {
     props.onFetchVehicles(props.vehicles.page);
   }, [props.vehicles.page]);
-
-  const vehiclesImgArray = [vehicle1, vehicle2, vehicle3, vehicle4];
 
   let vehicles = <div><Loader style={{ background: '#FFD700' }} /></div>
   let pagination = <div className={classes.PaginationLoading}>Wait while the vehicles are loaded. . .</div>
