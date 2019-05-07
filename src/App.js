@@ -23,7 +23,7 @@ const Starships = lazy(() => {
 });
 
 const Starship = lazy(() => {
-  return import('./containers/starships/Starship/Starship');
+  return import('./containers/starships/starship/Starship');
 });
 
 const Vehicles = lazy(() => {
@@ -31,11 +31,15 @@ const Vehicles = lazy(() => {
 });
 
 const Vehicle = lazy(() => {
-  return import('./containers/vehicles/Vehicle/Vehicle');
+  return import('./containers/vehicles/vehicle/Vehicle');
 });
 
 const People = lazy(() => {
   return import('./containers/people/People');
+});
+
+const Person = lazy(() => {
+  return import('./containers/people/person/Person');
 });
 
 const MainPage = lazy(() => {
@@ -63,6 +67,7 @@ const app = props => {
       <Route exact path='/vehicles' component={Vehicles} />
       <Route exact path={`/vehicles/:id`} component={Vehicle}/>
       <Route exact path='/people' component={People} />
+      <Route exact path={`/people/:id`} component={Person}/>
       <Route path='/' component={MainPage} />
       <Redirect to='/' />
     </AnimatedSwitch>

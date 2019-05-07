@@ -13,6 +13,7 @@ import starshipReducer from './store/reducers/starship';
 import vehiclesReducer from './store/reducers/vehicles';
 import vehicleReducer from './store/reducers/vehicle';
 import peopleReducer from './store/reducers/people';
+import personReducer from './store/reducers/person';
 
 import {
   watchPlanets,
@@ -21,7 +22,8 @@ import {
   watchStarship,
   watchVehicles,
   watchVehicle,
-  watchPeople
+  watchPeople,
+  watchPerson
 } from './store/sagas';
 
 import './index.css';
@@ -37,7 +39,8 @@ const rootReducer = combineReducers({
   starship: starshipReducer,
   vehicles: vehiclesReducer,
   vehicle: vehicleReducer,
-  people: peopleReducer
+  people: peopleReducer,
+  person: personReducer
 });
 
 const sagaMiddleware = createSagaMiddleware();
@@ -53,6 +56,7 @@ sagaMiddleware.run(watchStarship);
 sagaMiddleware.run(watchVehicles);
 sagaMiddleware.run(watchVehicle);
 sagaMiddleware.run(watchPeople);
+sagaMiddleware.run(watchPerson);
 
 const app = (
   <Provider store={store}>
