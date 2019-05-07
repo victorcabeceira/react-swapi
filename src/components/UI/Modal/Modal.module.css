@@ -1,0 +1,52 @@
+.Modal {
+  background-color: white;
+  box-shadow: 1px 1px 1px black;
+  border-radius: 25px;
+  box-sizing: border-box;
+  left: 15%;
+  top: 30%;
+  padding: 12px;
+  position: fixed;
+  outline: none;
+  transition: all 0.3s ease-out;
+  width: 70%;
+  z-index: 500;
+}
+
+.Modal .ContentRow {
+  margin: 8px;
+  color: #363636;
+  font-family: 'Death star font';
+  font-size: 150%;
+  letter-spacing: 0.1em;
+  justify-content: center;
+}
+
+.Modal .Button {
+  background-color: #FFD700;
+  color: #363636;
+  font-family: 'Death star font';
+  font-size: 120%;
+  letter-spacing: 0.1em;
+  justify-content: center;
+}
+
+@media (min-width: 600px) {
+  .Modal {
+      width: 500px;
+      left: calc(50% - 250px);
+  }
+}
+
+@media (max-width: 599px) {
+  .Modal {
+    width: 90%;
+    left: 5%;
+    top: 20%;
+  }
+
+  .Modal .Button {
+    font-size: 100%;
+    letter-spacing: 0.05em;
+  }
+}
