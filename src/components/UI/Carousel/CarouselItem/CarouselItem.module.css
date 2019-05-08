@@ -20,14 +20,16 @@
 
 .ItemText {
   top: 80%;
-  height: 50%;
+  height: 10%;
   width: 100%;
   position: absolute;
   text-align: center;
   color: #E8E8E8;
   font-family: 'Death star font';
-  font-size: 130%;
+  font-size: 180%;
   z-index: 1;
+  transition: 0.5s ease-in-out;
+  text-shadow: 0 0 0 transparent,0 0 0 transparent;
 }
 
 .BackGroundImage {
@@ -40,4 +42,13 @@
   opacity: .4;
   width: 100%;
   height: 100%;
+}
+
+.ItemText:hover {
+  color: #FFD700;
+  font-family: 'Death star font';
+  font-size: 230%;
+  letter-spacing: 0.2em;
+  z-index: 1;
+  text-shadow: 0 0 2px #FFDA17,0 0 2px #FFDA17;
 }
