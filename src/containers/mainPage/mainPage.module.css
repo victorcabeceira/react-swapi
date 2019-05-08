@@ -38,6 +38,10 @@
   animation-fill-mode: forwards;
 }
 
+.MainTextIcon {
+
+}
+
 .Movies {
   min-height: 700px;
   margin: 16px 48px 16px;

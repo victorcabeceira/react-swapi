@@ -1,5 +1,11 @@
 import React from 'react';
 import CustomCarousel from '../../components/UI/Carousel/Carousel';
+import { Element, scroller } from 'react-scroll'
+
+import Tooltip from '@material-ui/core/Tooltip';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 import classes from './mainPage.module.css';
 
@@ -30,6 +36,14 @@ const mainPage = props => {
     { id: 7, name: 'Episode VII - THE FORCE AWAKENS', description: 'Thirty years after the defeat of the Empire, Luke Skywalker has vanished and a new threat has risen: The First Order, led by the mysterious Supreme Leader Snoke and his dark side enforcer, Kylo Ren. General Leia Organa’s military force, the Resistance — and unlikely heroes brought together by fate — are the galaxy’s only hope at thwarting a new reign of evil.' },
   ]
 
+  const scrollTo = (name) => {
+    scroller.scrollTo(name, {
+      duration: 800,
+      delay: 0,
+      smooth: 'easeInOutQuart'
+    });
+  }
+
   return (
     <div className={classes.MainPageDiv}>
       <div className={classes.TopText}>Love Star wars? Get to know more about the content of Cannon movies here!</div>
@@ -46,13 +60,22 @@ const mainPage = props => {
       </div>
       <div className={classes.MainText}>
         Which data will you find here ?
+        <div className={classes.MainTextIcon} onClick={() => scrollTo('movies')}>
+          <Tooltip title='Click me!' placement='right'>
+            <FontAwesomeIcon
+              icon={faChevronDown}
+              size='3x'
+              color='#FFD700'
+            />
+          </Tooltip>
+        </div>
       </div>
-      <div className={classes.Movies}>
+      <Element name='movies' className={classes.Movies}>
         <div className={classes.MoviesTitle}>
           All data regarding the 7 cannon movies, from episode I to VII.
         </div>
         {movies.map(movie => (
-          <div className={classes.Movie}>
+          <div className={classes.Movie} key={movie.id}>
             <div className={classes.MovieName}>
               {movie.name}
             </div>
@@ -64,7 +87,7 @@ const mainPage = props => {
             </div>
           </div>
         ))}
-      </div>
+      </Element>
     </div>
   )
 }
