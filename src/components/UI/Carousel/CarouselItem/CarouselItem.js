@@ -21,7 +21,7 @@ const carousel = props => {
     >
       <Row center='xs' className={classes.CarouselItemRow}>
         <Col xs={12} className={classes.CarouselItemCol}>
-          <div className={classes.ItemText}>{props.to}</div>
+          <div className={classes.ItemText}>{props.text}</div>
           <div className={classes.BackGroundImage} style={backgroundImage} />
         </Col>
       </Row>

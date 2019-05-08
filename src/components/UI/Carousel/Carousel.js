@@ -14,6 +14,7 @@ const carousel = props => {
           <CarouselItem
             key={index}
             img={item.img}
+            text={item.text}
             to={item.to}
             {...props}
           />

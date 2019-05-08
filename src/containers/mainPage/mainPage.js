@@ -7,8 +7,8 @@ import starshipsImage from '../../assets/images/starships/6.png';
 
 const mainPage = props => {
   const carouselItems = [
-    { img: starshipsImage, alt: 'Starships', to: '/starships' },
-    { img: 'http://placehold.it/1000x400/ffffff/c0392b/&text=slide2', alt: 'Vehicles', to: '/vehicles' },
+    { img: starshipsImage, alt: 'Starships', to: '/starships', text: 'Starships' },
+    { img: 'http://placehold.it/1000x400/ffffff/c0392b/&text=slide2', alt: 'Vehicles', to: '/vehicles', text: 'Vehicles' },
   ]
 
   return (
@@ -19,6 +19,8 @@ const mainPage = props => {
           items={carouselItems}
           carouselProps={{
             dragging: true,
+            transitionMode: 'fade',
+            speed: 500
           }}
           {...props}
         />
