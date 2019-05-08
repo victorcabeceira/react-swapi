@@ -4,13 +4,14 @@ import { Row, Col } from 'react-flexbox-grid';
 
 import Card from '@material-ui/core/Card';
 
+import filmsImage from '../../../assets/images/films';
+
 import classes from './Movies.module.css';
 
 const card = props => {
-  const movie = m => {
-  console.log('props.img', m)
-  const imgStyle = {
-      backgroundImage: `url(${m.img})`,
+  const movie = (m, index) => {
+    const imgStyle = {
+      backgroundImage: `url(${filmsImage[index]})`,
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
       backgroundSize: 'contain',
@@ -41,9 +42,9 @@ const card = props => {
   return (
     <div>
       {
-        props.content.map(c => (
+        props.content.map((c, index) => (
           <div key={c.id}>
-            {movie(c)}
+            {movie(c, index)}
           </div>
         ))
       }
