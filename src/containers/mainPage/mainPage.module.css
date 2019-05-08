@@ -38,10 +38,6 @@
   animation-fill-mode: forwards;
 }
 
-.MainTextIcon {
-
-}
-
 .Movies {
   min-height: 700px;
   margin: 16px 48px 16px;
@@ -54,11 +50,4 @@
   letter-spacing: 0.1em;
   text-align: center;
   margin: 12px 0px 24px;
-}
-
-.Movie {
-  color: white;
-  font-size: 150%;
-  letter-spacing: 0.1em;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
