@@ -1,11 +1,31 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-// import classes from './CarouselItem.module.css';
+import { Row, Col } from 'react-flexbox-grid';
+
+import classes from './CarouselItem.module.css';
 
 const carousel = props => {
   // console.log('[CAROUSELITEM] ', props);
+  const backgroundImage = {
+    backgroundImage: `url(${props.img})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: 'contain',
+  }
+
   return (
-    <img src={props.img} alt={props.src} />
+    <NavLink
+      to={props.to}
+      style={{ textDecoration: 'none', color: '#E8E8E8', width: '100%', height: '100%' }}
+    >
+      <Row center='xs' className={classes.CarouselItemRow}>
+        <Col xs={12} className={classes.CarouselItemCol}>
+          <div className={classes.ItemText}>{props.to}</div>
+          <div className={classes.BackGroundImage} style={backgroundImage} />
+        </Col>
+      </Row>
+    </NavLink>
   )
 }
 
