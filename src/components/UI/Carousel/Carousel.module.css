@@ -1,4 +1,8 @@
 .CarouselDiv {
   height: 100%;
-  width: 100%;
+  width: 70%;
+  top: 10%;
+  left: 15%;
+  max-height: 650px;
+  position: absolute;
 }
