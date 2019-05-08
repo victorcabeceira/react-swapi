@@ -37,7 +37,15 @@ const footer = props => {
               <Col xs={4}>
                 <Row center="xs" middle="xs">
                   <Col xs>
-                    Section 3
+                    <p>
+                      All content displayed here has no commercial usage and is from https://swapi.co/.
+                    </p>
+                    <p>
+                      Star Wars and all associated names are © Lucasfilm ltd.
+                    </p>
+                    <p>
+                      TM & © Lucasfilm Ltd. All Rights Reserved.
+                    </p>
                   </Col>
                 </Row>
 
