@@ -21,3 +21,40 @@
   background-color: #2D2D2D;
   text-align: center;
 }
+
+.MainText {
+  text-align: center;
+  color: #FFD700;
+  font-family: 'Death star font';
+  font-size: 800%;
+  letter-spacing: 0.1em;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  margin: 20px 0px 20px;
+  z-index: 1;
+}
+
+.MainText:hover {
+  animation: moveSlideshow 3s linear;
+  animation-fill-mode: forwards;
+}
+
+.Movies {
+  min-height: 700px;
+  margin: 16px 48px 16px;
+  font-family: 'Death star font';
+}
+
+.MoviesTitle {
+  color: white;
+  font-size: 300%;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin: 12px 0px 24px;
+}
+
+.Movie {
+  color: white;
+  font-size: 150%;
+  letter-spacing: 0.1em;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
