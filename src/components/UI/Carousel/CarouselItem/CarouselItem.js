@@ -6,7 +6,6 @@ import { Row, Col } from 'react-flexbox-grid';
 import classes from './CarouselItem.module.css';
 
 const carousel = props => {
-  // console.log('[CAROUSELITEM] ', props);
   const backgroundImage = {
     backgroundImage: `url(${props.img})`,
     backgroundRepeat: 'no-repeat',

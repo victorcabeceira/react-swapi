@@ -6,7 +6,6 @@ import CarouselItem from './CarouselItem/CarouselItem';
 import classes from './Carousel.module.css';
 
 const carousel = props => {
-  // console.log('[CAROUSEL] ', props);
   return (
     <div className={classes.CarouselDiv}>
       <Carousel {...props.carouselProps}>
