@@ -39,7 +39,12 @@ const card = props => {
             <Col xs={12} md={3} className={classes.MovieImage}>
               <div style={imgStyle} />
             </Col>
-            <Col xs={12} md>
+            <Col xs={12} md style={{ margin: 0, padding: 0 }}>
+              <div className={classes.ColMainDiv}>
+                <div className={classes.ColFirstCol}/>
+                <div className={classes.ColSecondCol}/>
+                <div className={classes.ColThirdCol}/>
+              </div>
               <Row className={classes.MovieTitle}>{m.name}</Row>
               <Row className={classes.MovieDescription}>{m.description}</Row>
             </Col>
