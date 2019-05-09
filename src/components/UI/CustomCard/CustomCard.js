@@ -24,7 +24,7 @@ const card = props => {
     backgroundSize: 'contain',
     width: '100%',
     height: '100%',
-    maxHeight: '1024px'
+    maxHeight: '1400px',
   }
 
   let card = props.children;
@@ -57,7 +57,7 @@ const card = props => {
             rgba(255, 255, 255, 0.7))`,
         width: '100%',
         height: '100%',
-        maxHeight: '1024px'
+        maxHeight: '1400px'
       }
 
       const posterDivStyle = {
@@ -95,7 +95,7 @@ const card = props => {
       )
     }
   } else if (props.singleData) {
-    cardStyle = { ...cardStyle, ...{ margin: '10px 0px 40px' } };
+    cardStyle = { ...cardStyle, ...{ margin: '10px 0px 0px' } };
     card = (
       <div className={classes.SingleCardContent}>
         <div className={classes.SingleCardTitle}>

@@ -26,7 +26,7 @@ const film = props => {
     props.onFetchFilm(parsedFilmUrlId);
   }, [props.match.url]);
 
-  const unwantedProperties = ['url', 'created', 'edited'];
+  const unwantedProperties = ['episode_id', 'url', 'created', 'edited'];
   const filteredFilm = filterCollection(props.film, unwantedProperties, false);
   const filmUrlId = props.match.params.id;
 
@@ -50,7 +50,7 @@ const film = props => {
   const nextFilmId = actualFilmId >= 7 ? 7 : parseInt(props.match.params.id, 10) + 1;
 
   return (
-    <Row style={{ margin: 0, height: '100vh', minHeight: '600px', maxHeight: '1024px' }} middle='xs' center='xs'>
+    <Row style={{ margin: 0, height: '100%', minHeight: '600px', maxHeight: '1440px' }} middle='xs' center='xs'>
       <Col xs={2}>
         <NextItem
           to={`/films/${previousFilmId}/`}
@@ -64,7 +64,7 @@ const film = props => {
         />
       </Col>
 
-      <Col xs={8}>
+      <Col xs={8} style={{ padding: '4px 0px 12px 0px'}}>
         {film}
       </Col>
 
