@@ -4,7 +4,9 @@ import { Row, Col } from 'react-flexbox-grid';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
+import ExternalLink from '../../Navigation/ExternalLink/ExternalLink';
 
 import Page from '../../UI/Page/Page';
 
@@ -16,30 +18,54 @@ const footer = props => {
       <AppBar style={{ background: '#222', top: 'auto' }} className={classes.FooterRoot}>
         <Toolbar>
           <Page>
-            <Row center="xs" middle="xs" style={{ minHeight: '120px' }}>
+            <Row center='md' middle='md' style={{ minHeight: '120px' }}>
 
-              <Col xs={4} style={{ height: '100%' }}>
-                <Row center="xs" middle="xs">
-                  <Col xs>
-                    <FontAwesomeIcon icon={['fab', 'github-alt']} size='2x' color='#FFFFFF'/>
+              <Col md={4} style={{ height: '100%' }}>
+                <Row center='md' middle='md'>
+                  <Col md>
+                    About page
                   </Col>
                 </Row>
 
                 <hr />
 
-                <Row center="xs" middle="xs">
-                  <Col xs>
-                    Section 2
+                <Row middle='md' around='md'>
+                  <Col md={1}>
+                    <ExternalLink
+                      isIcon
+                      title='Source code'
+                      href='https://github.com/victorcabeceira/react-swapi'
+                      icon={['fab', 'github-alt']}
+                      size='2x'
+                      color='#FFFFFF'
+                    />
+                  </Col>
+                  <Col md={1}>
+                    <ExternalLink
+                      isIcon
+                      title='Developer Linkedin'
+                      href='https://www.linkedin.com/in/victor-fellipe/'
+                      icon={['fab', 'linkedin']}
+                      size='2x'
+                      color='#FFFFFF'
+                    />
+                  </Col>
+                  <Col md={1}>
+                    <ExternalLink
+                      isIcon
+                      title='Send me an email'
+                      href='mailto:victorfgcabeceira@gmail.com'
+                      icon={faEnvelope}
+                      size='2x'
+                      color='#FFFFFF'
+                    />
                   </Col>
                 </Row>
               </Col>
 
-              <Col xs={4}>
-                <Row center="xs" middle="xs">
-                  <Col xs>
-                    <p>
-                      All content displayed here has no commercial usage and is from https://swapi.co/.
-                    </p>
+              <Col md={4} className={classes.SecondMainCol}>
+                <Row center='md' middle='md'>
+                  <Col md>
                     <p>
                       Star Wars and all associated names are © Lucasfilm ltd.
                     </p>
@@ -48,29 +74,29 @@ const footer = props => {
                     </p>
                   </Col>
                 </Row>
-
               </Col>
 
-              <Col xs={4}>
-                <Row center="xs" middle="xs">
-                  <Col xs>
-                    Section 4
+              <Col md={4}>
+                <Row center='md' middle='md'>
+                  <Col md>
+                    All content displayed here is from:
+                    <ExternalLink
+                      title='SWAPI'
+                      href='https://swapi.co/'
+                      style={{ color: '#DDD' }}
+                    />
                   </Col>
                 </Row>
 
                 <hr />
 
-                <Row center="xs" middle="xs">
-                  <Col xs>
-                    Section 5
-                  </Col>
-                </Row>
-
-                <hr />
-
-                <Row center="xs" middle="xs">
-                  <Col xs>
-                    Section 6
+                <Row center='md' middle='md'>
+                  <Col md>
+                    <ExternalLink
+                      title='Official star wars page website link'
+                      href='https://www.starwars.com/'
+                      style={{ color: '#DDD' }}
+                    />
                   </Col>
                 </Row>
               </Col>

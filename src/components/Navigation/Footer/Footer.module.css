@@ -1,5 +1,9 @@
 .Footer {
   padding-top: 0px;
+  color: #DDD;
+  font-size: 125%;
+  letter-spacing: 0.1em;
+  font-weight: 500;
 }
 
 .FooterRoot {
