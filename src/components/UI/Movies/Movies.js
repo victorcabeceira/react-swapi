@@ -52,7 +52,7 @@ const card = props => {
   return (
     <div className={classes.MainDiv}>
       {moviesArray.map((c, index) => (
-        <div key={c.id}>
+        <div key={c.id} className={classes.MapMovieDiv}>
           {movie(c, index)}
         </div>
       ))}

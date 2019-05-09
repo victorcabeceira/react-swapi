@@ -1,38 +1,45 @@
 .MainDiv {
-  margin-bottom: 24px;
   height: 400px;
+}
+
+.MapMovieDiv {
+  margin-top: 48px;
 }
 
 .Card {
   background-color: #222;
-  margin: 12px 0 12px;
-  color: white;
-  font-size: 150%;
-  letter-spacing: 0.1em;
-  height: 300px;
   color: #DDD;
+  font-size: 150%;
+  height: 300px;
+  margin: 12px 0 12px;
+  letter-spacing: 0.2em;
+  border-radius: 10px;
 }
 
 .MovieRow {
-  margin: 8px 4px 8px;
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .MovieImage {
   border-right: 3px solid #FFD700;
-  margin-right: 12px;
+  margin: 0;
+  padding: 0;
 }
 
 .MovieTitle {
+  border-bottom: 1px #ddd solid;
   font-size: 250%;
+  padding: 8px 8px 4px 16px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   text-align: start;
-  border-bottom: 1px #ddd solid;
 }
 
 .MovieDescription {
-  margin-left: 4px;
   font-size: 140%;
+  letter-spacing: 0.1em;
+  margin-left: 4px;
   padding: 8px 12px 0 0;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   text-align: justify;
