@@ -53,11 +53,11 @@ const mainPage = props => {
       </div>
       <div className={classes.MainText}>
         Which data will you find here ?
-        <div className={classes.MainTextIcon} onClick={() => scrollTo('movies')}>
-          <Tooltip title='Click me!' placement='right'>
+        <div>
+          <Tooltip title='Click me!' placement='right' className={classes.MainTextIcon} onClick={() => scrollTo('movies')}>
             <FontAwesomeIcon
               icon={faChevronDown}
-              size='3x'
+              size='2x'
               color='#FFD700'
             />
           </Tooltip>

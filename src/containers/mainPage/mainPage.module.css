@@ -7,7 +7,7 @@
   text-align: center;
   color: #FFD700;
   font-family: 'Death star font';
-  font-size: 150%;
+  font-size: 180%;
   letter-spacing: 0.1em;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   margin: 20px 0px 20px;
@@ -26,11 +26,15 @@
   text-align: center;
   color: #FFD700;
   font-family: 'Death star font';
-  font-size: 800%;
+  font-size: 500%;
   letter-spacing: 0.1em;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   margin: 20px 0px 20px;
   z-index: 1;
+}
+
+.MainTextIcon {
+  cursor: pointer;
 }
 
 .MainText:hover {
