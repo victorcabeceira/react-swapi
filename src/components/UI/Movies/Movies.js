@@ -24,7 +24,7 @@ const card = props => {
       backgroundImage: `url(${filmsImage[index]})`,
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
-      backgroundSize: 'contain',
+      backgroundSize: 'cover',
       width: '100%',
       height: '100%',
     }
@@ -50,7 +50,7 @@ const card = props => {
   }
 
   return (
-    <div>
+    <div className={classes.MainDiv}>
       {moviesArray.map((c, index) => (
         <div key={c.id}>
           {movie(c, index)}

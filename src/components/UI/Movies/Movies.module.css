@@ -1,28 +1,36 @@
+.MainDiv {
+  margin-bottom: 24px;
+  height: 400px;
+}
+
 .Card {
+  background-color: #222;
   margin: 12px 0 12px;
   color: white;
   font-size: 150%;
   letter-spacing: 0.1em;
+  height: 100%;
 }
 
 .MovieRow {
   margin: 8px 4px 8px;
+  height: 100%;
 }
 
 .MovieImage {
-  border: 1px solid black;
-  margin-right: 4px;
+  border-right: 3px solid #FFD700;
+  margin-right: 12px;
 }
 
 .MovieName {
   font-size: 200%;
-  color: #FFD700;
+  color: #DDD;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .MovieDescription {
   margin-left: 4px;
   font-size: 150%;
-  color: #FFD700;
+  color: #DDD;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }

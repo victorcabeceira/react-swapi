@@ -1,6 +1,7 @@
 import React from 'react';
 import CustomCarousel from '../../components/UI/Carousel/Carousel';
 import { Element, scroller } from 'react-scroll'
+import { Row, Col } from 'react-flexbox-grid';
 
 import Tooltip from '@material-ui/core/Tooltip';
 
@@ -66,7 +67,11 @@ const mainPage = props => {
         <div className={classes.MoviesTitle}>
           All data regarding the 7 cannon movies, from episode I to VII.
         </div>
-        <Movies />
+        <Row center='xs' middle='xs' className={classes.MoviesInformation}>
+          <Col xs={12} className={classes.MoviesInformation}>
+            <Movies />
+          </Col>
+        </Row>
       </Element>
     </div>
   )
