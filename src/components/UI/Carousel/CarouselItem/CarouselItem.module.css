@@ -5,10 +5,11 @@
 
 .CarouselItemRow {
   width: 100%;
-  height: 90%;
-  top: 5%;
-  max-height: 600px;
-  max-width: 500px;
+  height: 100%;
+  font-size: 200%;
+  color: #E8E8E8;
+  font-family: 'Death star font';
+  text-align: center;
 }
 
 .CarouselItemCol {
@@ -19,14 +20,11 @@
 }
 
 .ItemText {
+  left: 0%;
   top: 80%;
   height: 10%;
   width: 100%;
   position: absolute;
-  text-align: center;
-  color: #E8E8E8;
-  font-family: 'Death star font';
-  font-size: 180%;
   z-index: 1;
   transition: 0.5s ease-in-out;
   text-shadow: 0 0 0 transparent, 0 0 0 transparent;
@@ -44,11 +42,9 @@
   height: 100%;
 }
 
-.ItemText:hover {
-  color: #FFD700;
-  font-family: 'Death star font';
-  font-size: 230%;
+.CarouselItemRow:hover {
+  font-size: 300%;
   letter-spacing: 0.2em;
-  z-index: 1;
   text-shadow: 0 0 2px #FFDA17, 0 0 2px #FFDA17;
+  color: #FFD700;
 }
