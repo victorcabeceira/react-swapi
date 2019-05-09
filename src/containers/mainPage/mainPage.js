@@ -39,7 +39,7 @@ const mainPage = props => {
 
   return (
     <div className={classes.MainPageDiv}>
-      <div className={classes.TopText}>Love Star wars? Get to know more about the content of Cannon movies here!</div>
+      <div className={classes.TopText}>Love Star wars? Get to know more about the content of Canon movies here!</div>
       <div className={classes.CustomCarouselDiv}>
         <CustomCarousel
           items={carouselItems}

@@ -25,7 +25,7 @@ const layout = props => {
         <CustomHeader {...props} />
 
         <div className={classes.MainContent}>
-          <Card style={{ background: '#363636' }} className={classes.Content}>
+          <Card style={{ background: '#363636', borderRadius: '10px' }} className={classes.Content}>
             {props.children}
           </Card>
         </div>
