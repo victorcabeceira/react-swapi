@@ -83,7 +83,6 @@ const footer = props => {
                     <ExternalLink
                       title='SWAPI'
                       href='https://swapi.co/'
-                      style={{ color: '#DDD' }}
                     />
                   </Col>
                 </Row>
@@ -95,7 +94,6 @@ const footer = props => {
                     <ExternalLink
                       title='Official star wars page website link'
                       href='https://www.starwars.com/'
-                      style={{ color: '#DDD' }}
                     />
                   </Col>
                 </Row>

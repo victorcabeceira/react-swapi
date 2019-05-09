@@ -2,12 +2,15 @@ import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import classes from './ExternalLink.module.css';
+
 const externalLink = props => {
   let link = null;
 
   if (props.isIcon) {
     link = (
       <a
+        className={classes.Link}
         title={props.title}
         href={props.href}
       >
@@ -21,6 +24,7 @@ const externalLink = props => {
   } else if (props.isImage) {
     link = (
       <a
+        className={classes.Link}
         title={props.title}
         href={props.href}
       >
@@ -30,6 +34,7 @@ const externalLink = props => {
   } else {
     link = (
       <a
+        className={classes.Link}
         title={props.title}
         href={props.href}
         style={{ ...props.style }}

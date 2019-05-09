@@ -1,0 +1,7 @@
+.Link {
+  color: #DDD;
+}
+
+.Link:hover {
+  color: #FFD700
+}
