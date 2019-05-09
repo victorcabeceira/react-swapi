@@ -45,6 +45,11 @@
   text-align: justify;
 }
 
+.MovieMainCol {
+  margin: 0;
+  padding: 0 16px 0 4px;
+}
+
 .ColMainDiv {
   text-align: center;
   width: 100%;
@@ -53,22 +58,26 @@
   margin-bottom: 8px;
 }
 
-.ColFirstCol {
+.ColFirstDiv {
   border-top: 12px solid #222;
   border-top-right-radius: 20px;
   float: left;
   width: 40%;
 }
 
-.ColSecondCol {
+.ColSecondDiv {
   border-top: 12px solid transparent;
   display: inline-block;
   width: 10%;
 }
 
-.ColThirdCol {
+.ColThirdDiv {
   border-top: 12px solid #222;
   border-top-left-radius: 20px;
   float: right;
   width: 40%;
+}
+
+.Card:hover {
+  color: #FFD700;
 }

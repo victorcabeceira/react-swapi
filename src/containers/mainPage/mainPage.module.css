@@ -52,6 +52,9 @@
   letter-spacing: 0.1em;
   text-align: center;
   margin: 12px 0px 24px;
+  padding: 8px 0;
+  background-color: #222;
+  border-radius: 20px;
 }
 
 .MoviesInformation {
@@ -59,4 +62,10 @@
   padding: 0;
   display: inline-block;
   max-width: 1800px;
+}
+
+.ImportantText {
+  color: #FFD700;
+  font-size: 110%;
+  letter-spacing: 0.2em;
 }

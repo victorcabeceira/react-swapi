@@ -65,7 +65,9 @@ const mainPage = props => {
       </div>
       <Element name='movies' className={classes.Movies}>
         <div className={classes.MoviesTitle}>
-          All data regarding the 7 cannon movies, from episode I to VII.
+          <p>All data regarding the 7 canon movies.</p>
+          <p>From episode I to VII.</p>
+          <p><b className={classes.ImportantText}>Title name</b> and <b className={classes.ImportantText}>small description</b> below.</p>
         </div>
         <Row center='xs' middle='xs' className={classes.MoviesInformation}>
           <Col xs={12} className={classes.MoviesInformation}>
