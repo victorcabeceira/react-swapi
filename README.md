@@ -1,11 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-To run the project locally, first install the dependencies and then run.
+To run the project locally, first install the dependencies and then run the project.
 
-Install dependencies: 
+To install the dependencies, run the following command on your terminal:
 ### `yarn install`
 
-Run the project:
+To execute the project, run the following command on your terminal:
 ### `yarn start`
 
-Or, get in touch with me at victorfgcabeceira@gmail.com in case you face any problems
+You will be redirected to the browse page. Have fun!
+
+Or, get in touch with me at victorfgcabeceira@gmail.com in case you face any problems.
