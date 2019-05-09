@@ -39,7 +39,7 @@ const film = props => {
         collectionImgNumber={parseInt(props.film.episode_id, 10) - 1}
         filteredCollection={filteredFilm}
         objectId={filmUrlId}
-        title={props.film.name}
+        title={props.film.title}
         singleData
       />
     )

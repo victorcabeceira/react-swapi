@@ -55,7 +55,7 @@ const films = props => {
                       collectionImgNumber={parseInt(film.episode_id, 10) - 1}
                       filteredCollection={filteredFilm}
                       objectId={filmUrlId}
-                      title={film.name}
+                      title={film.title}
                     />
                   </NavLink>
                 </Col>
