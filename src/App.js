@@ -59,7 +59,7 @@ const Specie = lazy(() => {
 });
 
 const MainPage = lazy(() => {
-  return import('./containers/mainPage/mainPage');
+  return import('./components/Navigation/MainPage/MainPage');
 });
 
 const CustomLayout = lazy(() => {
