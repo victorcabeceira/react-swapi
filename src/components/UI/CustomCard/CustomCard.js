@@ -129,7 +129,6 @@ const card = props => {
                         customTo={fu}
                         customKey={i}
                         divContent={getIdFromUrl(fu)}
-                        style={{ backgroundColor: '#222222', borderRadius: '20px', minWidth: '0px' }}
                       />
                     </div>
                   )

@@ -1,0 +1,13 @@
+.Button {
+  background-color: #222222;
+  border-radius: 20px;
+  min-width: 0px;
+  font-family: 'Death star font';
+  font-size: 35%;
+  letter-spacing: 0.1em;
+}
+
+.Button:hover {
+  background-color: #FFD700;
+  color: black;
+}
