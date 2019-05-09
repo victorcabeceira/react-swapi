@@ -62,6 +62,10 @@ const MainPage = lazy(() => {
   return import('./components/Navigation/MainPage/MainPage');
 });
 
+const AboutPage = lazy(() => {
+  return import('./components/Navigation/AboutPage/AboutPage');
+});
+
 const CustomLayout = lazy(() => {
   return import('./hoc/Layout/Layout');
 });
@@ -88,6 +92,7 @@ const app = props => {
       <Route exact path={`/films/:id`} component={Film}/>
       <Route exact path='/species' component={Species} />
       <Route exact path={`/species/:id`} component={Specie}/>
+      <Route exact path='/about' component={AboutPage} />
       <Route path='/' component={MainPage} />
       <Redirect to='/' />
     </AnimatedSwitch>

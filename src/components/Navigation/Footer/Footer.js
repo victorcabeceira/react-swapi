@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
+import { NavLink } from 'react-router-dom';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -23,7 +24,12 @@ const footer = props => {
               <Col md={4} style={{ height: '100%' }}>
                 <Row center='md' middle='md'>
                   <Col md>
-                    About page
+                    <NavLink
+                      to={'/about'}
+                      className={classes.NavLink}
+                    >
+                      About page
+                    </NavLink>
                   </Col>
                 </Row>
 
