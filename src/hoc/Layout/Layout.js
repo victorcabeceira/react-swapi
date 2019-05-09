@@ -22,7 +22,9 @@ const layout = props => {
   return (
     <div style={layoutBackGround}>
       <div className={classes.Layout}>
-        <CustomHeader {...props} />
+        <div className={classes.Header}>
+          <CustomHeader {...props} />
+        </div>
 
         <div className={classes.MainContent}>
           <Card style={{ background: '#363636', borderRadius: '10px' }} className={classes.Content}>

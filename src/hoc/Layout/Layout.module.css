@@ -10,6 +10,10 @@
   margin: 0;
 }
 
+.Header {
+  height: 100px;
+}
+
 @media (min-height: 1024px) {
   .Content {
     margin: 0 0 60px;
@@ -19,6 +23,9 @@
 @media (max-width: 567px) {
   .Layout {
     background: #363636;
+  }
+  .Header {
+    display: none !important;
   }
   .Footer {
     display: none !important;

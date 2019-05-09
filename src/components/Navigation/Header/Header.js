@@ -28,12 +28,12 @@ const header = props => {
 
   return (
     <div className={classes.Root}>
-      <AppBar position='static' style={{ background: '#222' }}>
-        <Toolbar>
-          <Grid fluid style={{ width: '100%' }}>
-            <Row>
-              <Col xs={2} md={4}>
-                <Row middle='xs' left='xs'>
+      <AppBar position='static' style={{ background: '#222', height: '100%' }}>
+        <Toolbar className={classes.FullWH}>
+          <Grid fluid className={classes.FullWH}>
+            <Row middle='xs' className={classes.FullWH}>
+              <Col xs={2} md={4} className={classes.FullWH}>
+                <Row middle='xs' left='xs' className={classes.FullWH}>
                   <Col xs={2}>
                     <div className={classes.DesktopOnly}>
                       <NavLink
@@ -62,8 +62,8 @@ const header = props => {
                 </Row>
               </Col>
 
-              <Col xs={10} md={4}>
-                <Row center='xs' middle='xs' style={{ height: '100%' }}>
+              <Col xs={10} md={4} className={classes.FullWH}>
+                <Row center='xs' middle='xs' className={classes.FullWH}>
                   <Col xs>
                     <div className={classes.DesktopOnly}>
                       <Image
@@ -84,8 +84,8 @@ const header = props => {
                 </Row>
               </Col>
 
-              <Col xs={4} className={classes.DesktopOnly}>
-                <Row end='xs' middle='xs' style={{ height: '100%' }}>
+              <Col xs={4} className={`${classes.DesktopOnly} ${classes.FullWH}`}>
+                <Row end='xs' middle='xs' className={classes.FullWH}>
 
                   <NavigationItems {...props} />
 

@@ -4,6 +4,7 @@ import { Row, Col } from 'react-flexbox-grid';
 import { faHome, faGlobe, faFilm, faFighterJet, faDna, faUser, faRocket } from '@fortawesome/free-solid-svg-icons'
 
 import NavigationItem from './NavigationItem/NavigationItem';
+import classes from './NavigationItems.module.css';
 
 const navigationItems = (props) => {
   let navigationItemsDiv = <div></div>;
@@ -11,42 +12,42 @@ const navigationItems = (props) => {
     {
       title: 'People',
       icon: faUser,
-      size: 'lg',
+      size: '2x',
       color: '#8C8C8C',
       to: '/people'
     },
     {
       title: 'Species',
       icon: faDna,
-      size: 'lg',
+      size: '2x',
       color: '#8C8C8C',
       to: '/species'
     },
     {
       title: 'Starships',
       icon: faRocket,
-      size: 'lg',
+      size: '2x',
       color: '#8C8C8C',
       to: '/starships'
     },
     {
       title: 'Vehicles',
       icon: faFighterJet,
-      size: 'lg',
+      size: '2x',
       color: '#8C8C8C',
       to: '/vehicles'
     },
     {
       title: 'Planets',
       icon: faGlobe,
-      size: 'lg',
+      size: '2x',
       color: '#8C8C8C',
       to: '/planets'
     },
     {
       title: 'Films',
       icon: faFilm,
-      size: 'lg',
+      size: '2x',
       color: '#8C8C8C',
       to: '/films'
     }
@@ -56,7 +57,7 @@ const navigationItems = (props) => {
     navigationItemsArray.unshift({
       title: 'Home',
       icon: faHome,
-      size: 'lg',
+      size: '2x',
       color: '#8C8C8C',
       to: '/'
     })
@@ -100,7 +101,7 @@ const navigationItems = (props) => {
   }
 
   return (
-    <div>
+    <div className={classes.NavigationItems}>
       {navigationItemsDiv}
     </div>
   )
