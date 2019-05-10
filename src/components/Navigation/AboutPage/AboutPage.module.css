@@ -44,3 +44,18 @@
   padding: 8px 12px 12px;
   border-bottom: 2px solid #DDD;
 }
+
+.Hr {
+  border-width: 2px;
+}
+
+.DisclaimerTitle {
+  color: #DDD;
+  font-size: 200%;
+  border-bottom: 1px solid #DDD;
+}
+
+.DisclaimerContent {
+  color: #DDD;
+  font-size: 100%;
+}

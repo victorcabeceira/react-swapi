@@ -13,7 +13,7 @@ const aboutPage = props => {
     <Grid fluid className={classes.Grid}>
       <Row middle='xs' className={classes.MainRow}>
         <Col xs={12} md>
-          <Typography align='left' gutterBottom variant='h2' className={classes.Title}>
+          <Typography align='center' gutterBottom variant='h2' className={classes.Title}>
             What is this project?
           </Typography>
           <Typography align='justify' gutterBottom variant='body1' className={classes.Content}>
@@ -49,10 +49,51 @@ const aboutPage = props => {
         </Col>
       </Row>
 
-      <p>About page!</p>
-      <p>Introduce myself.</p>
-      <p>No commercial use. Only to display my knowledge on Javascript, React and related technologies.</p>
-      <p>Techonologies used.</p>
+      <hr className={classes.Hr} />
+
+      <Row>
+        <Col xs>
+          <Row center='xs' middle='xs'>
+            <Col xs={2}>
+              <Typography align='center' gutterBottom variant='body1' className={classes.DisclaimerTitle}>
+                Copyright
+              </Typography>
+            </Col>
+          </Row>
+
+          <Row center='xs' middle='xs'>
+            <Col xs>
+              <Typography align='justify' gutterBottom variant='body1' className={classes.DisclaimerContent}>
+                <strong>Star Wars</strong> and all associated names are <strong>© Lucasfilm ltd.</strong>
+              </Typography>
+              <Typography align='justify' gutterBottom variant='body1' className={classes.DisclaimerContent}>
+                <strong>TM & © Lucasfilm Ltd. All Rights Reserved.</strong>
+              </Typography>
+              <Typography align='justify' gutterBottom variant='body1' className={classes.DisclaimerContent}>
+                This project is open source and carries a MIT licence.
+              </Typography>
+              <Typography align='justify' gutterBottom variant='body1' className={classes.DisclaimerContent}>
+                All data has been collected from {link('https://swapi.co/', 'SWAPI')} and other free/open source websites.
+              </Typography>
+              <Typography align='justify' gutterBottom variant='body1' className={classes.DisclaimerContent}>
+                This website has no commercial use. Only to display my knowledge of Javascript, React and related technologies.
+              </Typography>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+
+      <hr className={classes.Hr} />
+
+      <Row>
+        <Col xs={12} md={4}>
+          Describe myself
+        </Col>
+        <Col xs={12} md={4}>
+          Image with opacity
+        </Col>
+      </Row>
+
     </Grid>
   )
 }
