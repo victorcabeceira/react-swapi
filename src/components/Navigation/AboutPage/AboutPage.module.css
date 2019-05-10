@@ -20,7 +20,7 @@
   color: #FFD700
 }
 
-.Title {
+.Title, .AboutMeTitle {
   color: #DDD;
   font-size: 200%;
 }
@@ -52,10 +52,19 @@
 .DisclaimerTitle {
   color: #DDD;
   font-size: 200%;
-  border-bottom: 1px solid #DDD;
+  font-weight: 600;
 }
 
 .DisclaimerContent {
   color: #DDD;
   font-size: 100%;
+}
+
+.AboutMeRow {
+  height: 460px;
+}
+
+.Strong {
+  font-weight: 700;
+  color: #FFD700;
 }
