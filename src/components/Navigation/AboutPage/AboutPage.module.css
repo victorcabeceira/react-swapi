@@ -1,5 +1,46 @@
-.MainDiv {
+.Grid {
   color: #DDD;
   font-size: 200%;
   padding: 16px;
+}
+
+.MainRow {
+
+}
+
+.Col {
+
+}
+
+.Link {
+  color: #DDD;
+}
+
+.Link:hover {
+  color: #FFD700
+}
+
+.Title {
+  color: #DDD;
+  font-size: 200%;
+}
+
+.Content {
+  color: #DDD;
+  font-size: 100%;
+}
+
+.StatisticsCol {
+  background-color: #222;
+  border-radius: 20px;
+  margin: 0 12px 0 16px;
+  padding: 4px 20px 4px;
+}
+
+.StatisticsTitle {
+  color: #DDD;
+  font-size: 120%;
+  font-weight: 600;
+  padding: 8px 12px 12px;
+  border-bottom: 2px solid #DDD;
 }
