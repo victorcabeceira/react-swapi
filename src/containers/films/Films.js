@@ -28,15 +28,15 @@ const films = props => {
 
   if (!props.loading) {
     films = (
-      <Row style={{ margin: 0 }} middle='xs' center='xs'>
-        <Col xs>
+      <Row middle='xs' center='xs' className={classes.MainRow}>
+        <Col xs className={classes.MainCol}>
           <Row middle='xs' center='xs' className='mt-xl'>
             <Col xs>
               <div className={classes.Films}>Films count : {props.films.count}</div>
             </Col>
           </Row>
 
-          <Row middle='xs' center='xs' className='mt-sm'>
+          <Row middle='xs' center='xs' className={`mt-sm ${classes.SecondRow}`}>
             {props.films.results.map(film => {
               const wantedProperties = ['title', 'director', 'producer', 'release_date'];
               const filteredFilm = filterCollection(film, wantedProperties, true);

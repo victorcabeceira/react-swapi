@@ -93,3 +93,13 @@
     height: 0;
   }
 }
+
+@media (min-height: 2160px) {
+  .CollectionInformation {
+    font-size: 170%;
+  }
+
+  .FilmPoster {
+    height: 450px;
+  }
+}

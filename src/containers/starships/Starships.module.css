@@ -61,8 +61,41 @@
   }
 }
 
-@media (min-height: 1200px) {
+@media (min-height: 1200px) and (max-height: 1439px)  {
   .MainStarships {
     padding-bottom: 54px;
+  }
+}
+
+@media (min-height: 1440px) and (max-height: 2159px)  {
+  .MainStarships {
+    padding-bottom: 54px;
+  }
+}
+
+@media (min-height: 2160px) {
+  .MainStarships {
+    padding-bottom: 0;
+    height: 100%;
+    min-height: 85vh;
+  }
+
+  .MainRow {
+    margin: 0;
+    min-height: 85vh;
+  }
+
+  .MainCol {
+    margin: 0;
+    min-height: 85vh;
+  }
+
+  .SecondRow {
+    margin: 0;
+    min-height: 85vh;
+  }
+
+  .StarshipsCol {
+    height: 420px;
   }
 }

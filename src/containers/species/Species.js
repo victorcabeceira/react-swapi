@@ -28,15 +28,15 @@ const species = props => {
 
   if (!props.loading) {
     species = (
-      <Row style={{ margin: 0 }} middle='xs' center='xs'>
-        <Col xs>
+      <Row middle='xs' center='xs' className={classes.MainRow}>
+        <Col xs className={classes.MainSpecies}>
           <Row middle='xs' center='xs' className='mt-xl'>
             <Col xs>
               <div className={classes.Species}>Species count : {props.species.count}</div>
             </Col>
           </Row>
 
-          <Row middle='xs' center='xs' className='mt-sm'>
+          <Row middle='xs' center='xs' className={`mt-sm ${classes.SecondRow}`}>
             {props.species.results.map(specie => {
               const wantedProperties = ['name', 'classification', 'designation', 'average_height', 'average_lifespan', 'language'];
               const filteredSpecie = filterCollection(specie, wantedProperties, true);

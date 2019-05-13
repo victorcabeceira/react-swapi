@@ -31,7 +31,7 @@ const card = props => {
 
   if (props.filteredCollection && !props.singleData) {
     const collectionInformation = (
-      <div>
+      <div className={classes.CollectionInformation}>
         <div className={classes.CardContentTitle}>
           {props.collection} : {props.title}
         </div>

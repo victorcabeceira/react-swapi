@@ -28,15 +28,15 @@ const planets = props => {
 
   if (!props.loading) {
     planets = (
-      <Row style={{ margin: 0 }} middle='xs' center='xs'>
-        <Col xs>
+      <Row middle='xs' center='xs' className={classes.MainRow}>
+        <Col xs className={classes.MainCol}>
           <Row middle='xs' center='xs' className='mt-xl'>
             <Col xs>
               <div className={classes.Planets}>Planets count : {props.planets.count}</div>
             </Col>
           </Row>
 
-          <Row middle='xs' center='xs' className={`${classes.PlanetsRow} mt-sm`}>
+          <Row middle='xs' center='xs' className={`mt-sm ${classes.SecondRow}`}>
             {props.planets.results.map(planet => {
               const wantedProperties = ['name', 'climate', 'gravity', 'population', 'films'];
               const filteredPlanet = filterCollection(planet, wantedProperties, true);

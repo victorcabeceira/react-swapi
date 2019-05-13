@@ -28,15 +28,15 @@ const starships = props => {
 
   if (!props.loading) {
     starships = (
-      <Row style={{ margin: 0 }} middle='xs' center='xs'>
-        <Col xs>
+      <Row middle='xs' center='xs' className={classes.MainRow}>
+        <Col xs className={classes.MainCol}>
           <Row middle='xs' center='xs' className='mt-xl'>
             <Col xs>
               <div className={classes.Starships}>Starships count : {props.starships.count}</div>
             </Col>
           </Row>
 
-          <Row middle='xs' center='xs' className='mt-sm'>
+          <Row middle='xs' center='xs' className={`mt-sm ${classes.SecondRow}`}>
             {props.starships.results.map(starship => {
               const wantedProperties = ['name', 'model', 'passengers', 'starship_class', 'crew'];
               const filteredStarship = filterCollection(starship, wantedProperties, true);

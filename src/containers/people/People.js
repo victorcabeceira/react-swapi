@@ -29,15 +29,15 @@ const people = props => {
 
   if (!props.loading) {
     people = (
-      <Row style={{ margin: 0 }} middle='xs' center='xs'>
-        <Col xs>
+      <Row middle='xs' center='xs' className={classes.MainRow}>
+        <Col xs className={classes.MainCol}>
           <Row middle='xs' center='xs' className='mt-xl'>
             <Col xs>
               <div className={classes.People}>People count : {props.people.count}</div>
             </Col>
           </Row>
 
-          <Row middle='xs' center='xs' className='mt-sm'>
+          <Row middle='xs' center='xs' className={`mt-sm ${classes.SecondRow}`}>
             {props.people.results.map(people => {
               const wantedProperties = ['name', 'height', 'mass', 'hair_color', 'skin_color', 'birth_year', 'gender'];
               const filteredPeople = filterCollection(people, wantedProperties, true);
