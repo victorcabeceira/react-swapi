@@ -64,15 +64,18 @@
   }
 }
 
-@media (max-height: 1024px) {
+@media (max-height: 767px) {
   .MainFilms {
     padding-bottom: 0px;
   }
 }
 
-@media (min-height: 1025px) and (max-height: 1079px) {
+@media (min-height: 768px) and (max-height: 1079px) {
   .MainFilms {
-    padding-bottom: 124px;
+    padding-bottom: 0px;
+  }
+  .FilmsCol {
+    height: 540px;
   }
 }
 
