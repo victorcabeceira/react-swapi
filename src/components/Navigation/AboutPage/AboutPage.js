@@ -10,16 +10,6 @@ const aboutPage = props => {
     <a className={classes.Link} href={url} alt={name}>{name}</a>
   )
 
-  const imageStyle = {
-    backgroundImage: `url('https://avatars3.githubusercontent.com/u/5403782?s=460&v=4')`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: 'contain',
-    width: '100%',
-    height: '100%',
-    opacity: 0.8
-  }
-
   return (
     <Grid fluid className={classes.Grid}>
       <Row middle='xs' className={classes.MainRow}>
@@ -98,7 +88,7 @@ const aboutPage = props => {
       <hr className={classes.Hr} />
 
       <Row className={classes.AboutMeRow}>
-        <Col xs={12} md={8}>
+        <Col xs={12}>
           <Row center='xs' middle='xs'>
             <Col xs={12}>
               <Typography align='center' gutterBottom variant='body1' className={classes.AboutMeTitle}>
@@ -122,13 +112,10 @@ const aboutPage = props => {
                 My main experience is with development, specifically with Javascript and React.
               </Typography>
               <Typography align='justify' gutterBottom variant='body1' className={classes.DisclaimerContent}>
-                Like what you see? Get in touch through one of the options below on the footer!
+                Like what you see? Get in touch through one of the options below in the footer!
               </Typography>
             </Col>
           </Row>
-        </Col>
-        <Col xs={12} md={4} >
-          <div style={imageStyle}></div>
         </Col>
       </Row>
 
