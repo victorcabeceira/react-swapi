@@ -1,5 +1,6 @@
 .Layout {
   width: 100%;
+  overflow-x: hidden;
 }
 
 .MainContent {
@@ -14,31 +15,74 @@
   height: 100px;
 }
 
+.Footer {
+  position: relative;
+  width: 100%;
+}
+
 @media (min-height: 1024px) {
   .Content {
     margin: 0 0 60px;
   }
 }
 
-@media (max-width: 567px) {
-  .Layout {
-    background: #363636;
-  }
-  .Header {
-    display: none !important;
-  }
+@media (max-width: 410px) {
   .Footer {
     display: none !important;
+  }
+
+  .MainContent {
+    margin: 2%;
+  }
+}
+
+@media (min-width: 411px) and (max-width: 569px) {
+  .Footer {
+    display: none !important;
+  }
+
+  .MainContent {
+    margin: 3%;
+  }
+}
+
+@media (min-width: 569px) and (max-width: 767px) {
+  .Footer {
+    display: none !important;
+  }
+
+  .MainContent {
+    margin: 2%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1366px) {
+  .MainContent {
+    margin: 1% 2% 4% 2%;
+  }
+
+  .Footer {
+    font-size: 140%;
+  }
+}
+
+@media (min-width: 1367px) and (max-width: 1920px) {
+  .MainContent {
+    margin: 1% 2% 4% 2%;
+  }
+
+  .Footer {
+    font-size: 100%;
   }
 }
 
 @media (min-width: 1921px) and (max-width: 2560px) {
   .MainContent {
-    margin: 1% 2% 5% 2%;
+    margin: 1% 2% 4% 2%;
   }
 
   .Footer {
-    font-size: 120%;
+    font-size: 100%;
   }
 }
 
@@ -48,6 +92,6 @@
   }
 
   .Footer {
-    font-size: 140%;
+    font-size: 100%;
   }
 }

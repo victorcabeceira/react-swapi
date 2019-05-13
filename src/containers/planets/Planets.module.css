@@ -34,59 +34,53 @@
   min-height: 85vh;
 }
 
-@media (max-width: 999px) {
-  .PlanetsCol {
-    height: 420px;
-  }
-}
-
-@media (min-width: 1000px) and (max-width: 1449px) {
-  .PlanetsCol {
-    height: 370px;
-  }
-}
-
-@media (min-width: 1451px) {
-  .PlanetsCol {
-    height: 310px;
-  }
-}
-
-@media (max-height: 767px) {
+@media (max-width: 399px) and (max-height: 850px) {
   .MainPlanets {
     padding-bottom: 0px;
   }
 }
 
-@media (min-height: 768px) and (max-height: 1079px) {
-  .MainPlanets {
-    padding-bottom: 0px;
-  }
-  .PlanetsCol {
-    height: 320px;
-  }
-}
-
-@media (min-height: 1080px) and (max-height: 1199px) {
+@media (min-width: 400px) and (max-width: 500px) and (max-height: 850px) {
   .MainPlanets {
     padding-bottom: 0px;
   }
 }
 
-@media (min-height: 1200px) and (max-height: 1439px)  {
+@media (min-width: 500px) and (max-width: 767px) and (max-height: 850px) {
   .MainPlanets {
-    padding-bottom: 54px;
+    padding-bottom: 0px;
+  }
+  .PlanetsCol {
+    height: 350px;
   }
 }
 
-@media (min-height: 1440px) and (max-height: 2159px)  {
-  .PlanetsCol {
-    height: 360px;
+@media (min-width: 768px) and (max-width: 1365px) and (max-height: 600px) {
+  .MainPlanets {
+    padding-bottom: 0px;
   }
 }
 
-@media (min-height: 2160px) {
+@media (min-width: 1366px) and (max-width: 1919px) and (min-height: 768px) and (max-height: 1079px) {
   .PlanetsCol {
-    height: 420px;
+    height: 280px;
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2559px) and (min-height: 1080px) and (max-height: 1439px) {
+  .PlanetsCol {
+    height: 400px;
+  }
+}
+
+@media (min-width: 2560px) and (max-width: 3839px) and (min-height: 1440px) and (max-height: 2159px) {
+  .PlanetsCol {
+    height: 400px;
+  }
+}
+
+@media (min-width: 3840px) and (min-height: 2160px) {
+  .PlanetsCol {
+    height: 500px;
   }
 }

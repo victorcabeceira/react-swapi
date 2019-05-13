@@ -38,43 +38,16 @@
   min-height: 85vh;
 }
 
-@media (max-width: 500px) {
-  .PeopleCol {
-    height: 500px;
-  }
-}
-
-@media (min-width: 501px) and (max-width: 999px) {
-  .PeopleCol {
-    height: 500px;
-  }
-}
-
-@media (min-width: 1000px) and (max-width: 1365px) {
-  .PeopleCol {
-    height: 470px;
-  }
-}
-
-@media (min-width: 1366px) and (max-width: 1450px) {
-  .PeopleCol {
-    height: 360px;
-  }
-}
-
-@media (min-width: 1451px) {
-  .PeopleCol {
-    height: 310px;
-  }
-}
-
-@media (max-height: 767px) {
+@media (max-width: 399px) and (max-height: 850px) {
   .MainPeople {
     padding-bottom: 0px;
   }
+  .PeopleCol {
+    height: 450px;
+  }
 }
 
-@media (min-height: 768px) and (max-height: 1079px) {
+@media (min-width: 400px) and (max-width: 500px) and (max-height: 850px) {
   .MainPeople {
     padding-bottom: 0px;
   }
@@ -83,19 +56,43 @@
   }
 }
 
-@media (min-height: 1080px) and (max-height: 1439px) {
+@media (min-width: 500px) and (max-width: 767px) and (max-height: 850px) {
+  .MainPeople {
+    padding-bottom: 0px;
+  }
+  .PeopleCol {
+    height: 350px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1365px) and (max-height: 600px) {
   .MainPeople {
     padding-bottom: 0px;
   }
 }
 
-@media (min-height: 1440px) and (max-height: 2159px) {
+@media (min-width: 1366px) and (max-width: 1919px) and (min-height: 768px) and (max-height: 1079px) {
+  .MainPeople {
+    padding-bottom: 0px;
+  }
   .PeopleCol {
-    height: 360px;
+    height: 320px;
   }
 }
 
-@media (min-height: 2160px) {
+@media (min-width: 1920px) and (max-width: 2559px) and (min-height: 1080px) and (max-height: 1439px) {
+  .MainPeople {
+    padding-bottom: 0px;
+  }
+}
+
+@media (min-width: 2560px) and (max-width: 3839px) and (min-height: 1440px) and (max-height: 2159px) {
+  .PeopleCol {
+    height: 500px;
+  }
+}
+
+@media (min-width: 3840px) and (min-height: 2160px) {
   .PeopleCol {
     height: 550px;
   }

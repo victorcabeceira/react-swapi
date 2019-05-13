@@ -8,11 +8,11 @@
 }
 
 .MobileOnly {
-  display: none;
+  display: inline-block;
 }
 
 .DesktopOnly {
-  display: block;
+  display: none;
 }
 
 @media (max-width: 567px) {
@@ -33,6 +33,16 @@
   }
 
   .DesktopOnly {
+    display: none;
+  }
+}
+
+@media (min-width: 568px) {
+  .DesktopOnly {
+    display: block;
+  }
+
+  .MobileOnly {
     display: none;
   }
 }

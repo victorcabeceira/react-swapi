@@ -34,71 +34,59 @@
   min-height: 85vh;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 399px) and (max-height: 850px) {
+  .MainStarships {
+    padding-bottom: 0px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 500px) and (max-height: 850px) {
+  .MainStarships {
+    padding-bottom: 0px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 767px) and (max-height: 850px) {
+  .MainStarships {
+    padding-bottom: 0px;
+  }
+  .StarshipsCol {
+    height: 350px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1365px) and (max-height: 600px) {
+  .MainStarships {
+    padding-bottom: 0px;
+  }
+}
+
+@media (min-width: 1366px) and (max-width: 1919px) and (min-height: 768px) and (max-height: 1079px) {
+  .MainStarships {
+    padding-bottom: 0px;
+  }
+  .StarshipsCol {
+    height: 320px;
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2559px) and (min-height: 1080px) and (max-height: 1439px) {
+  .MainStarships {
+    padding-bottom: 0px;
+  }
   .StarshipsCol {
     height: 500px;
   }
 }
 
-@media (min-width: 501px) and (max-width: 999px) {
+@media (min-width: 2560px) and (max-width: 3839px) and (min-height: 1440px) and (max-height: 2159px) {
   .StarshipsCol {
     height: 500px;
   }
 }
 
-@media (min-width: 1000px) and (max-width: 1365px) {
+@media (min-width: 3840px) and (min-height: 2160px) {
   .StarshipsCol {
-    height: 470px;
-  }
-}
-
-@media (min-width: 1366px) and (max-width: 1450px) {
-  .StarshipsCol {
-    height: 360px;
-  }
-}
-
-@media (min-width: 1451px) {
-  .StarshipsCol {
-    height: 310px;
-  }
-}
-
-@media (max-height: 767px) {
-  .MainStarships {
-    padding-bottom: 0px;
-  }
-}
-
-@media (min-height: 768px) and (max-height: 1079px) {
-  .MainStarships {
-    padding-bottom: 0px;
-  }
-  .StarshipsCol {
-    height: 450px;
-  }
-}
-
-@media (min-height: 1080px) and (max-height: 1199px) {
-  .MainStarships {
-    padding-bottom: 0px;
-  }
-}
-
-@media (min-height: 1200px) and (max-height: 1439px)  {
-  .MainStarships {
-    padding-bottom: 54px;
-  }
-}
-
-@media (min-height: 1440px) and (max-height: 2159px)  {
-  .StarshipsCol {
-    height: 420px;
-  }
-}
-
-@media (min-height: 2160px) {
-  .StarshipsCol {
-    height: 420px;
+    height: 550px;
   }
 }

@@ -42,7 +42,6 @@
 .FilmPoster {
   width: 100%;
   height: 275px;
-  vertical-align: middle;
 }
 
 /* ----------------SINGLE--------------- */
@@ -88,38 +87,62 @@
   color: #FFD700;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 399px) and (max-height: 850px) {
+  .CollectionInformation {
+    font-size: 75%;
+  }
   .FilmPoster {
     height: 0;
   }
 }
 
-@media (min-height: 768px) and (max-height: 1079px)  {
+@media (min-width: 400px) and (max-width: 500px) and (max-height: 850px) {
   .CollectionInformation {
-    font-size: 100%;
+    font-size: 70%;
   }
-
   .FilmPoster {
-    height: 500px;
+    height: 0;
   }
 }
 
-@media (min-height: 1440px) and (max-height: 2159px)  {
+@media (min-width: 768px) and (max-width: 1365px) and (max-height: 600px) {
+  .CollectionInformation {
+    font-size: 70%;
+  }
+}
+
+@media (min-width: 1366px) and (max-width: 1919px) and (min-height: 768px) and (max-height: 1079px) {
+  .CollectionInformation {
+    font-size: 80%;
+  }
+  .FilmPoster {
+    height: 350px;
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2559px) and (min-height: 1080px) and (max-height: 1439px) {
+  .CollectionInformation {
+    font-size: 150%;
+  }
+  .FilmPoster {
+    height: 455px;
+  }
+}
+
+@media (min-width: 2560px) and (max-width: 3839px) and (min-height: 1440px) and (max-height: 2159px) {
   .CollectionInformation {
     font-size: 140%;
   }
-
   .FilmPoster {
     height: 450px;
   }
 }
 
-@media (min-height: 2160px) {
+@media (min-width: 3840px) and (min-height: 2160px) {
   .CollectionInformation {
     font-size: 170%;
   }
-
   .FilmPoster {
-    height: 450px;
+    height: 650px;
   }
 }

@@ -22,32 +22,48 @@
   color: #FFD700;
 }
 
-@media (max-height: 767px) {
-  .MainPeople {
-    padding-bottom: 0px;
+@media (max-width: 399px) and (max-height: 850px) {
+  .Footer {
+    display: none;
   }
 }
 
-@media (min-height: 768px) and (max-height: 1079px) {
+@media (min-width: 400px) and (max-width: 500px) and (max-height: 850px) {
   .Footer {
-    padding-top: 112px;
+    display: none;
   }
 }
 
-@media (min-height: 1080px) and (max-height: 1439px) {
+@media (min-width: 768px) and (max-width: 1365px) and (max-height: 600px) {
   .Footer {
-    padding-top: 70px;
+    padding-top: 0px;
   }
 }
 
-@media (min-height: 1440px) and (max-height: 2159px) {
+@media (min-width: 1366px) and (max-width: 1919px) and (min-height: 768px) and (max-height: 1079px) {
   .Footer {
-    padding-top: 20px;
+    padding-top: 86px;
+    font-size: 70%;
   }
 }
 
-@media (min-height: 2160px) {
+@media (min-width: 1920px) and (max-width: 2559px) and (min-height: 1080px) and (max-height: 1439px) {
   .Footer {
-    padding-top: 24px;
+    padding-top: 50px;
+    font-size: 80%;
+  }
+}
+
+@media (min-width: 2560px) and (max-width: 3839px) and (min-height: 1440px) and (max-height: 2159px){
+  .Footer {
+    padding-top: 30px;
+    font-size: 140%;
+  }
+}
+
+@media (min-width: 3840px) and (min-height: 2160px) {
+  .Footer {
+    padding-top: 40px;
+    font-size: 220%;
   }
 }
